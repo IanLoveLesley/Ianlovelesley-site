@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essays - Ian</title>
+    
+    <!-- 引入 MathJax 用于 LaTeX 实时渲染 -->
+    <script>
+        MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Noto Serif SC", "Songti SC", "Times New Roman", STSong, serif; /* 使用适合长文阅读的衬线体 */
+        }
+
+        body {
+            background: linear-gradient(135deg, #FFF5EC 0%, #FDE0CB 100%);
+            color: #5C4D42;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 4rem 2rem;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            animation: slideUp 0.8s ease;
+        }
+
+        /* 页面标题 */
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #4A3F35;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        /* ================= 1. 只读模式样式 ================= */
+        .reader-mode {
+            display: block; /* 默认显示只读模式 */
+        }
+
+        .essay-card {
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(226, 135, 67, 0.05);
+            line-height: 2;
+            font-size: 1.1rem;
+            color: #4A3F35;
+        }
+
+        .essay-date {
+            font-size: 0.9rem;
+            color: #9CA3AF;
+            margin-bottom: 1rem;
+            font-family: -apple-system, sans-serif;
+        }
+
+        /* ================= 2. 隐藏的写作模式样式 ================= */
+        .editor-mode {
+            display: none; /* 默认彻底隐藏 */
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .editor-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: -apple-system, sans-serif;
+        }
+
+        .editor-workspace {
+            display: flex;
+            gap: 1.5rem;
+            height: 60vh;
+        }
+
+        /* 输入区 */
+        .textarea-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .code-editor {
+            flex: 1;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid #F8B49C;
+            background: rgba(255, 255, 255, 0.8);
+            color: #333;
+            font-family: "JetBrains Mono", Consolas, monospace;
+            font-size: 1rem;
+            resize: none;
+            outline: none;
+            line-height: 1.6;
+        }
+
+        /* 实时预览区 */
+        .preview-container {
+            flex: 1;
+            padding: 1.5rem;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            overflow-y: auto;
+            line-height: 2;
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            padding: 0.6rem 1.5rem;
+            border-radius: 8px;
+            border: none;
+            background: #D36B46;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn:hover { background: #C05A35; }
+
+        /* 返回按钮 */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            margin-top: 3rem;
+            text-decoration: none;
+            color: #7A6B5D;
+            font-family: -apple-system, sans-serif;
+            justify-content: center;
+            width: 100%;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- 标题，暗门就在标题的句号上 -->
+        <h1 class="page-title">Essays<span id="secret-door" style="cursor: default; opacity: 0.8;">.</span></h1>
+
+        <!-- ================= 1. 访客看到的只读模式 ================= -->
+        <div id="reader-view" class="reader-mode">
+            <div class="essay-card">
+                <div class="essay-date">2026-07-17</div>
+                <div class="essay-content">
+                    这是一篇对外的公开随笔。所有人来到这个页面，都只能看到这些安静排版好的文字。
+                    <br><br>
+                    如果你懂这里的暗号，你就能开启另一个世界。
+                </div>
+            </div>
+            
+            <a href="index.html" class="back-btn">← 返回主页</a>
+        </div>
+
+
+        <!-- ================= 2. 只有你和她能看到的写作模式 ================= -->
+        <div id="editor-view" class="editor-mode">
+            <div class="editor-header">
+                <h3>📝 创作者模式 (支持 LaTeX)</h3>
+                <button class="btn" onclick="exitEditor()">退出编辑</button>
+            </div>
+            
+            <div class="editor-workspace">
+                <!-- 左侧：输入代码和公式的地方 -->
+                <div class="textarea-container">
+                    <textarea id="source-input" class="code-editor" oninput="renderPreview()" placeholder="在此输入文字，支持 $...$ 或 $$...$$ 渲染数学公式..."></textarea>
+                </div>
+                
+                <!-- 右侧：实时排版效果预览 -->
+                <div class="preview-container" id="math-preview">
+                    预览区...
+                </div>
+            </div>
+            <p style="font-size: 0.85rem; color: #9CA3AF; text-align: center; margin-top: 1rem;">
+                * 提示：静态网页无法将文字直接存入服务器。请在写完后将内容复制保存，或手动更新至 HTML 代码中。
+            </p>
+        </div>
+
+    </div>
+
+    <!-- 暗门交互逻辑与 LaTeX 渲染逻辑 -->
+    <script>
+        // 1. 设置暗号密码
+        const SECRET_PASSCODE = "921727"; // 你可以改成你们的纪念日、缩写等任何暗号
+
+        // 2. 触发暗门事件（双击标题后面的那个小句号）
+        document.getElementById('secret-door').addEventListener('dblclick', function() {
+            let pwd = prompt("你触碰了暗门。请输入密钥：");
+            if (pwd === SECRET_PASSCODE) {
+                // 密码正确，隐藏只读模式，展示编辑器
+                document.getElementById('reader-view').style.display = 'none';
+                document.getElementById('editor-view').style.display = 'flex';
+            } else if (pwd !== null) {
+                alert("密钥错误。");
+            }
+        });
+
+        // 3. 退出编辑器
+        function exitEditor() {
+            document.getElementById('editor-view').style.display = 'none';
+            document.getElementById('reader-view').style.display = 'block';
+        }
+
+        // 4. 实时渲染 LaTeX 和文本
+        let timer = null;
+        function renderPreview() {
+            // 防抖处理，避免输入太快导致渲染卡顿
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+                const input = document.getElementById('source-input').value;
+                const preview = document.getElementById('math-preview');
+                
+                // 将文本替换到预览区，并将换行符转为网页换行
+                preview.innerHTML = input.replace(/\n/g, '<br>');
+                
+                // 通知 MathJax 重新解析渲染预览区里的公式
+                MathJax.typesetClear([preview]);
+                MathJax.typesetPromise([preview]).catch(function (err) {
+                    console.log('MathJax 渲染错误: ', err.message);
+                });
+            }, 500); // 停止打字 0.5 秒后自动渲染
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Timeline - 秘密基地</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Noto Serif SC", "Songti SC", serif; /* 充满回忆感的衬线体 */
+        }
+
+        body {
+            /* 更温柔的晚霞与玫瑰渐变色 */
+            background: linear-gradient(135deg, #FFF0F0 0%, #FDE0CB 100%);
+            color: #5C4D42;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 4rem 2rem;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #D36B46;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: #7A6B5D;
+            font-family: -apple-system, sans-serif;
+        }
+
+        /* 时光轴主体容器 */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        /* 时光轴的那根主线 */
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: rgba(211, 107, 70, 0.3);
+        }
+
+        /* 时光轴的每一个节点 */
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 1.5rem;
+            animation: slideUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        /* 利用 nth-child 做动画延迟，让节点一个个浮现 */
+        .timeline-item:nth-child(1) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.6s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.8s; }
+
+        /* 节点上的小圆点 */
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.35rem; /* 配合 timeline 的 padding 居中对齐到线上 */
+            top: 0.3rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #FFF0F0;
+            border: 3px solid #D36B46;
+            box-shadow: 0 0 10px rgba(211, 107, 70, 0.4);
+            z-index: 1;
+        }
+
+        /* 节点日期 */
+        .date {
+            font-size: 0.95rem;
+            font-family: -apple-system, sans-serif;
+            color: #D36B46;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* 节点内容卡片 */
+        .content-card {
+            background: rgba(255, 255, 255, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(226, 135, 67, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .content-card:hover {
+            transform: translateX(5px);
+            background: rgba(255, 255, 255, 0.9);
+            border-color: #F8B49C;
+        }
+
+        .content-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #4A3F35;
+            margin-bottom: 0.8rem;
+        }
+
+        .content-text {
+            font-size: 1rem;
+            color: #6B5B4E;
+            line-height: 1.8;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            margin-top: 4rem;
+            text-decoration: none;
+            color: #7A6B5D;
+            font-family: -apple-system, sans-serif;
+            justify-content: center;
+            width: 100%;
+            transition: color 0.3s ease;
+        }
+
+        .back-btn:hover { color: #D36B46; }
+        .back-btn svg { width: 20px; height: 20px; margin-right: 8px; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1 class="title">For 小仪</h1>
+            <p class="subtitle">INFJ & ISFJ · 跨越一千多公里的飞行与牵挂</p>
+        </div>
+
+        <div class="timeline">
+            <!-- 节点 1 -->
+            <div class="timeline-item">
+                <div class="date">2025.07.09</div>
+                <div class="content-card">
+                    <div class="content-title">毕业季的告白</div>
+                    <div class="content-text">
+                        那是在夏天写下的文字。记录着高中的回忆、分居两地的不舍，以及对未来的约定。那是我们这段旅程里非常珍贵的一页
+                    </div>
+                </div>
+            </div>
+
+            <!-- 节点 2 -->
+            <div class="timeline-item">
+                <div class="date">2025.09.21</div>
+                <div class="content-card">
+                    <div class="content-title">生日的见面</div>
+                    <div class="content-text">
+                        秋日，借着生日仪式感，把所有的想念和新一年的期许都融进彼此眉眼。距离虽然遥远，但心永远在一起
+                    </div>
+                </div>
+            </div>
+
+            <!-- 节点 3 -->
+            <div class="timeline-item">
+                <div class="date">2026.01</div>
+                <div class="content-card">
+                    <div class="content-title">冬日温暖</div>
+                    <div class="content-text">
+                       人间忽晚，山河已冬。寒日的北京银装素裹，我们拥抱彼此，在环球、南锣鼓巷、清华园和后海留下印记
+                    </div>
+                </div>
+            </div>
+
+            <!-- 节点 4 -->
+            <div class="timeline-item">
+                <div class="date">2026.05 初</div>
+                <div class="content-card">
+                    <div class="content-title">春天的重逢</div>
+                    <div class="content-text">
+                        终于再度跨越距离见到了彼此。在返程的高铁上，你会想些什么？那些见面的画面，是支撑我很久的动力
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+            </svg>
+            离开秘密基地
+        </a>
+    </div>
+
+</body>
+</html>
