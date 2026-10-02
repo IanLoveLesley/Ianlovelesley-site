@@ -4,160 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Works - Ian</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        }
-
-        body {
-            background: linear-gradient(135deg, #FFF5EC 0%, #FDE0CB 100%);
-            color: #5C4D42;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 4rem 2rem;
-        }
-
-        .container {
-            max-width: 900px;
-            width: 100%;
-            animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        /* 页面标题 */
-        .page-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #4A3F35;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        .page-subtitle {
-            font-size: 1.1rem;
-            color: #7A6B5D;
-            text-align: center;
-            margin-bottom: 3.5rem;
-            line-height: 1.6;
-        }
-
-        /* 项目卡片网格 */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        /* 单个项目卡片 */
-        .project-card {
-            background: rgba(255, 255, 255, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.9);
-            border-radius: 16px;
-            padding: 1.8rem;
-            display: flex;
-            flex-direction: column;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 4px 15px rgba(226, 135, 67, 0.05);
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .project-card:hover {
-            transform: translateY(-8px);
-            background: rgba(255, 255, 255, 0.95);
-            border-color: #F8B49C;
-            box-shadow: 0 12px 30px rgba(211, 107, 70, 0.15);
-        }
-
-        /* 卡片头部：图标与标题 */
-        .project-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-
-        .project-icon {
-            width: 24px;
-            height: 24px;
-            margin-right: 12px;
-            stroke: #D36B46;
-        }
-
-        .project-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #4A3F35;
-        }
-
-        /* 项目描述 */
-        .project-desc {
-            font-size: 0.95rem;
-            color: #7A6B5D;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-            flex-grow: 1; /* 让标签自动推到底部 */
-        }
-
-        /* 技术标签容器 */
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-        }
-
-        /* 单个标签 */
-        .tag {
-            background: rgba(211, 107, 70, 0.1);
-            color: #D36B46;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        /* 返回主页按钮 */
-        .back-btn {
-            display: inline-flex;
-            align-items: center;
-            margin-top: 4rem;
-            text-decoration: none;
-            color: #7A6B5D;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            justify-content: center;
-            width: 100%;
-        }
-
-        .back-btn:hover {
-            color: #D36B46;
-        }
-
-        .back-btn svg {
-            width: 20px;
-            height: 20px;
-            margin-right: 8px;
-        }
-
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+    <link rel="stylesheet" href="assets/site.css">
 </head>
-<body>
+<body class="inner"><a class="skip-link" href="#main">跳到正文</a><header class="site-header"><a class="wordmark" href="index.html" aria-label="Ian 首页">Ian<span> .</span></a><nav aria-label="主要导航"><a href="works.html" aria-current="page">作品</a><a href="essays.html">文字</a><a href="about.html">关于</a><a href="contact.html">联系</a><a href="guestbook.html">留言</a></nav><span class="header-note">A LITTLE CORNER OF THE INTERNET</span></header>
 
-    <div class="container">
+    <main id="main">
         <h1 class="page-title">Selected Works</h1>
         <p class="page-subtitle">从底层架构到前端呈现，再到数据驱动的模型预测。<br>这里是我写下的部分代码与项目实践。</p>
 
         <div class="projects-grid">
             
             <!-- 项目 1 -->
-            <a href="https://github.com/IanLoveLesley/cpp-TextEditor" target="_blank" class="project-card">
+            <a href="https://github.com/IanLoveLesley/cpp-TextEditor" target="_blank" rel="noopener noreferrer" class="project-card">
                 <div class="project-header">
                     <svg class="project-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 9.75L16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" />
@@ -173,7 +31,7 @@
             </a>
 
             <!-- 项目 2 -->
-            <a href="https://github.com/IanLoveLesley/SocialBondsAnalysis" target="_blank" class="project-card">
+            <a href="https://github.com/IanLoveLesley/SocialBondsAnalysis" target="_blank" rel="noopener noreferrer" class="project-card">
                 <div class="project-header">
                     <svg class="project-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -197,7 +55,7 @@
             </svg>
             返回主页
         </a>
-    </div>
+    </main>
 
-</body>
+<footer class="site-footer"><a class="wordmark" href="index.html">Ian<span> .</span></a><p>用代码构建，用文字记录。<br><span>Made with curiosity & a little tenderness.</span></p><a href="mailto:Ianlovelesley@outlook.com">Say hello ↗</a></footer></body>
 </html>
