@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | escape }} - Ian</title>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, svg: { fontCache: 'global' } };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}">
+</head>
+<body class="inner">
+  <main id="main">
+    <article class="article">
+      <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%Y年%m月%d日' }}</time>
+      <h1>{{ page.title | escape }}</h1>
+      <div class="content">{{ content }}</div>
+    </article>
+    <div style="margin-top: 3rem;">
+      <script src="https://giscus.app/client.js"
+        data-repo="IanLoveLesley/Ianlovelesley-site"
+        data-repo-id="R_kgDOTbXEKw"
+        data-category="General"
+        data-category-id="DIC_kwDOTbXEK84DBYaJ"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="noborder_light"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async></script>
+    </div>
+    <a class="back-btn" href="{{ '/essays.html' | relative_url }}">← 返回文章列表</a>
+  </main>
+</body>
+</html>

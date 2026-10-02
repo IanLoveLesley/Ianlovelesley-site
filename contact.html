@@ -4,136 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Ian</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        }
-
-        body {
-            background: linear-gradient(135deg, #FFF5EC 0%, #FDE0CB 100%);
-            color: #5C4D42;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 4rem 2rem;
-        }
-
-        .container {
-            max-width: 600px;
-            width: 100%;
-            animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        /* 页面标题 */
-        .page-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #4A3F35;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        .page-subtitle {
-            font-size: 1.1rem;
-            color: #7A6B5D;
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        /* 联系方式列表 */
-        .contact-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-        }
-
-        /* 单个联系卡片 */
-        .contact-item {
-            display: flex;
-            align-items: center;
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.9);
-            border-radius: 16px;
-            text-decoration: none;
-            color: #5C4D42;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(226, 135, 67, 0.05);
-        }
-
-        .contact-item:hover {
-            transform: translateX(10px);
-            background: rgba(255, 255, 255, 0.95);
-            border-color: #F8B49C;
-            box-shadow: 0 8px 25px rgba(211, 107, 70, 0.15);
-        }
-
-        .contact-icon {
-            width: 40px;
-            height: 40px;
-            margin-right: 1.5rem;
-            fill: currentColor;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .contact-icon svg {
-            width: 28px;
-            height: 28px;
-            stroke: #D36B46;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .contact-platform {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.2rem;
-        }
-
-        .contact-detail {
-            font-size: 0.95rem;
-            color: #7A6B5D;
-        }
-
-        /* 返回主页按钮 */
-        .back-btn {
-            display: inline-flex;
-            align-items: center;
-            margin-top: 3rem;
-            text-decoration: none;
-            color: #7A6B5D;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .back-btn:hover {
-            color: #D36B46;
-        }
-
-        .back-btn svg {
-            width: 20px;
-            height: 20px;
-            margin-right: 8px;
-        }
-
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+    <link rel="stylesheet" href="assets/site.css">
 </head>
-<body>
+<body class="inner"><a class="skip-link" href="#main">跳到正文</a><header class="site-header"><a class="wordmark" href="index.html" aria-label="Ian 首页">Ian<span> .</span></a><nav aria-label="主要导航"><a href="works.html">作品</a><a href="essays.html">文字</a><a href="about.html">关于</a><a href="contact.html" aria-current="page">联系</a><a href="guestbook.html">留言</a></nav><span class="header-note">A LITTLE CORNER OF THE INTERNET</span></header>
 
-    <div class="container">
+    <main id="main">
         <h1 class="page-title">Contact Me</h1>
         <p class="page-subtitle">如果你有任何想法，或者想探讨交流，欢迎联系我。</p>
 
@@ -152,7 +27,7 @@
             </a>
 
             <!-- GitHub -->
-            <a href="https://github.com/IanLoveLesley" target="_blank" class="contact-item">
+            <a href="https://github.com/IanLoveLesley" target="_blank" rel="noopener noreferrer" class="contact-item">
                 <div class="contact-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
@@ -186,7 +61,7 @@
             </svg>
             返回主页
         </a>
-    </div>
+    </main>
 
-</body>
+<footer class="site-footer"><a class="wordmark" href="index.html">Ian<span> .</span></a><p>用代码构建，用文字记录。<br><span>Made with curiosity & a little tenderness.</span></p><a href="mailto:Ianlovelesley@outlook.com">Say hello ↗</a></footer></body>
 </html>
