@@ -11,6 +11,15 @@
   <link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}">
 </head>
 <body class="inner">
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header article-header">
+    <a class="wordmark" href="{{ '/index.html' | relative_url }}" aria-label="Ian 首页">Ian<span> .</span></a>
+    <nav aria-label="文章导航">
+      <a href="{{ '/index.html' | relative_url }}">← 返回主页</a>
+      <a href="{{ '/essays.html' | relative_url }}">文章列表</a>
+    </nav>
+    <span class="header-note">IAN'S PERSONAL SPACE</span>
+  </header>
   <main id="main">
     <article class="article">
       <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%Y年%m月%d日' }}</time>
@@ -35,5 +44,16 @@
     </div>
     <a class="back-btn" href="{{ '/essays.html' | relative_url }}">← 返回文章列表</a>
   </main>
+  <script>
+    document.querySelectorAll('.content table').forEach(function (table, index) {
+      const region = document.createElement('div');
+      region.className = 'article-table-wrap';
+      region.setAttribute('role', 'region');
+      region.setAttribute('aria-label', '文章表格 ' + (index + 1));
+      region.tabIndex = 0;
+      table.parentNode.insertBefore(region, table);
+      region.appendChild(table);
+    });
+  </script>
 </body>
 </html>
