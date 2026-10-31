@@ -1,0 +1,2518 @@
+{
+  "schemaVersion": 1,
+  "revision": 2,
+  "collectionId": "col1",
+  "estimatedMinutes": 6,
+  "shuffleOptions": true,
+  "scoring": {
+    "strategy": "dimension-profile",
+    "shapeWeight": 0.7,
+    "levelWeight": 0.3,
+    "coResultGap": 1.8,
+    "balancedSpread": 8,
+    "distantDistance": 20
+  },
+  "id": "painting",
+  "kind": "painting",
+  "order": 3,
+  "slug": "painting",
+  "title": "如果你是一幅画，会是哪一幅？",
+  "shortTitle": "画作人格",
+  "subtitle": "从日常的光影里，看见你的轮廓。",
+  "description": "你喜欢怎样的光，先留意大块颜色还是小小细节，又喜欢怎样与人相处？从生活里的选择，找到一幅与你合拍的画。",
+  "cover": {
+    "style": "gallery",
+    "image": "assets/art/jalais-hill.jpg"
+  },
+  "axes": [
+    {
+      "id": "light",
+      "label": "光影偏好",
+      "short": "光影",
+      "low": "夜色清影",
+      "high": "日光暖意",
+      "matchWeight": 1,
+      "reading": {
+        "low": "暗一点、柔一点的光更容易让你放松。你不急着把每个角落照亮，阴影也有自己舒服的位置。",
+        "high": "明亮的窗和照进来的阳光，会明显影响你对一个地方的喜欢。日光本身就是一种好心情的条件。"
+      }
+    },
+    {
+      "id": "rhythm",
+      "label": "行动节拍",
+      "short": "节拍",
+      "low": "缓慢停留",
+      "high": "流动变化",
+      "matchWeight": 1,
+      "reading": {
+        "low": "你喜欢在一个地方待够时间。慢下来、少换几次场景，反而更容易感受到这段日子。",
+        "high": "变化会让你有精神。多走几步、换一个地方或接住新话头，常常比一直坐着更合你的节拍。"
+      }
+    },
+    {
+      "id": "detail",
+      "label": "注意落点",
+      "short": "细节",
+      "low": "先看整体",
+      "high": "看清细节",
+      "matchWeight": 1,
+      "reading": {
+        "low": "你先接住的是整体的气氛。细节偶尔模糊一点，也不妨碍你知道自己喜不喜欢。",
+        "high": "小字、纹理和角落里的动作很容易被你看见。你会在别人已经看完的地方，再停一会儿。"
+      }
+    },
+    {
+      "id": "order",
+      "label": "空间秩序",
+      "short": "秩序",
+      "low": "随手安放",
+      "high": "有条有理",
+      "matchWeight": 1,
+      "reading": {
+        "low": "东西可以按当下顺手的方式放着，行程也可以到了再改。留一点随意，会让你感觉更自在。",
+        "high": "你喜欢东西各有位置，事情先后有序。整理好以后，注意力才更容易安稳地落下来。"
+      }
+    },
+    {
+      "id": "company",
+      "label": "画面人气",
+      "short": "人气",
+      "low": "独处留白",
+      "high": "有人相伴",
+      "matchWeight": 1,
+      "reading": {
+        "low": "画面里少一点人，你反而能更完整地待着。空桌、背影和安静角落，对你有自己的吸引力。",
+        "high": "你会被有人来往的场景吸引。几个人在一起吃饭、聊天，能让一个地方明显变得更有意思。"
+      }
+    },
+    {
+      "id": "expression",
+      "label": "情绪笔触",
+      "short": "笔触",
+      "low": "轻轻带过",
+      "high": "鲜明表达",
+      "matchWeight": 1,
+      "reading": {
+        "low": "你的喜欢和难过未必会立刻写在脸上。轻一点的表达，也可以装着很认真的感受。",
+        "high": "你愿意把感受清楚地带到外面。喜欢就让对方看见，情绪也可以成为生活里鲜明的一笔。"
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "P01",
+      "prompt": "周日早上，准备在房间待半天。哪些光线，是你会主动给自己留的？",
+      "focus": "早晨的窗帘",
+      "primaryAxis": "light",
+      "weights": {
+        "light": 1,
+        "expression": 0.35
+      },
+      "options": [
+        {
+          "id": "P01_o1",
+          "text": "把帘子拉上，只让屏幕和一盏小灯亮着，暗一点自在。",
+          "scores": {
+            "light": -2,
+            "expression": -1
+          }
+        },
+        {
+          "id": "P01_o2",
+          "text": "留薄薄一层窗帘，屋里看得清，但没有明显亮斑。",
+          "scores": {
+            "light": -1,
+            "expression": -1
+          }
+        },
+        {
+          "id": "P01_o3",
+          "text": "调到桌上刚好有一块日光，喜欢看影子慢慢移动。",
+          "scores": {
+            "light": 1,
+            "expression": 0
+          }
+        },
+        {
+          "id": "P01_o4",
+          "text": "把窗帘完全打开，让阳光把整个房间照亮。",
+          "scores": {
+            "light": 2,
+            "expression": 1
+          }
+        }
+      ],
+      "selection": {
+        "mode": "multiple",
+        "maxSelections": 2
+      }
+    },
+    {
+      "id": "P02",
+      "prompt": "约朋友见面，只空出半天。哪些安排会让你期待？",
+      "focus": "半天的出门安排",
+      "primaryAxis": "rhythm",
+      "weights": {
+        "rhythm": 1,
+        "company": 0.35
+      },
+      "options": [
+        {
+          "id": "P02_o1",
+          "text": "找个安静位置，两个人坐一下午，谁都不用赶下一场。",
+          "scores": {
+            "rhythm": -2,
+            "company": 1
+          }
+        },
+        {
+          "id": "P02_o2",
+          "text": "一起去做点手工，慢慢弄完一件东西再吃饭。",
+          "scores": {
+            "rhythm": -1,
+            "company": 0
+          }
+        },
+        {
+          "id": "P02_o3",
+          "text": "沿街走走，不断换地方，有意思就停一会儿。",
+          "scores": {
+            "rhythm": 1,
+            "company": 1
+          }
+        },
+        {
+          "id": "P02_o4",
+          "text": "多叫几个人，逛市集、吃东西、玩游戏，半天都别闲着。",
+          "scores": {
+            "rhythm": 2,
+            "company": 2
+          }
+        }
+      ],
+      "selection": {
+        "mode": "multiple",
+        "maxSelections": 2
+      }
+    },
+    {
+      "id": "P03",
+      "prompt": "拍完一张街景点开照片，哪些地方会让你多看两眼？",
+      "focus": "回看一张随手拍的照片",
+      "primaryAxis": "detail",
+      "weights": {
+        "detail": 1,
+        "order": 0.35
+      },
+      "options": [
+        {
+          "id": "P03_o1",
+          "text": "整张图有没有当时的气氛，模糊一点也不影响喜欢。",
+          "scores": {
+            "detail": -2,
+            "order": -1
+          }
+        },
+        {
+          "id": "P03_o2",
+          "text": "主体和大块颜色的位置顺不顺眼。",
+          "scores": {
+            "detail": -1,
+            "order": 2
+          }
+        },
+        {
+          "id": "P03_o3",
+          "text": "角落有个没注意的人影，或一块颜色刚好呼应了远处。",
+          "scores": {
+            "detail": 1,
+            "order": 0
+          }
+        },
+        {
+          "id": "P03_o4",
+          "text": "放大招牌、窗台和墙面，连小字和纹理都想看清楚。",
+          "scores": {
+            "detail": 2,
+            "order": 1
+          }
+        }
+      ],
+      "selection": {
+        "mode": "multiple",
+        "maxSelections": 2
+      }
+    },
+    {
+      "id": "P04",
+      "prompt": "买回一袋零碎小东西，要放到桌上。你平时可能怎么收？",
+      "focus": "桌上的零碎东西",
+      "primaryAxis": "order",
+      "weights": {
+        "order": 1,
+        "detail": 0.35
+      },
+      "options": [
+        {
+          "id": "P04_o1",
+          "text": "摊在顺手的位置，桌子有点乱没关系，我知道东西在哪。",
+          "scores": {
+            "order": -2,
+            "detail": -1
+          }
+        },
+        {
+          "id": "P04_o2",
+          "text": "拿个盒子先一起放进去，让桌面空出来就好。",
+          "scores": {
+            "order": -1,
+            "detail": -1
+          }
+        },
+        {
+          "id": "P04_o3",
+          "text": "按常用程度分几块，摆起来顺眼，也方便拿。",
+          "scores": {
+            "order": 1,
+            "detail": 1
+          }
+        },
+        {
+          "id": "P04_o4",
+          "text": "每件东西都有固定位置，连盒子的标签也一起写好。",
+          "scores": {
+            "order": 2,
+            "detail": 2
+          }
+        }
+      ],
+      "selection": {
+        "mode": "multiple",
+        "maxSelections": 2
+      }
+    },
+    {
+      "id": "P05",
+      "prompt": "休息日想去咖啡店待一会儿。哪些安排是你会主动选的？",
+      "focus": "咖啡店里想坐的位置",
+      "primaryAxis": "company",
+      "weights": {
+        "company": 1,
+        "expression": 0.35
+      },
+      "options": [
+        {
+          "id": "P05_o1",
+          "text": "自己坐最里面的角落，旁边没人，也不用有人来找我聊。",
+          "scores": {
+            "company": -2,
+            "expression": -1
+          }
+        },
+        {
+          "id": "P05_o2",
+          "text": "一个人坐窗边，听着店里的动静，各过各的下午。",
+          "scores": {
+            "company": -1,
+            "expression": 0
+          }
+        },
+        {
+          "id": "P05_o3",
+          "text": "叫一个很熟的人来，不用一直说话，也能坐很久。",
+          "scores": {
+            "company": 1,
+            "expression": -1
+          }
+        },
+        {
+          "id": "P05_o4",
+          "text": "约几个人拼一桌，或者坐吧台，听见好玩的话题就接上。",
+          "scores": {
+            "company": 2,
+            "expression": 2
+          }
+        }
+      ],
+      "selection": {
+        "mode": "multiple",
+        "maxSelections": 2
+      }
+    },
+    {
+      "id": "P06",
+      "prompt": "拍到一张自己很喜欢的照片，发给朋友时，你可能怎么配话？",
+      "focus": "给喜欢的照片配句话",
+      "primaryAxis": "expression",
+      "weights": {
+        "expression": 1,
+        "detail": 0.35
+      },
+      "options": [
+        {
+          "id": "P06_o1",
+          "text": "只发图，不解释喜欢哪里，想让他自己看。",
+          "scores": {
+            "expression": -2,
+            "detail": -1
+          }
+        },
+        {
+          "id": "P06_o2",
+          "text": "写时间地点，交代一下今天去了哪儿。",
+          "scores": {
+            "expression": -1,
+            "detail": 0
+          }
+        },
+        {
+          "id": "P06_o3",
+          "text": "圈出一个细节，解释这里为什么让我忍不住拍下来。",
+          "scores": {
+            "expression": 1,
+            "detail": 2
+          }
+        },
+        {
+          "id": "P06_o4",
+          "text": "直接写‘今天真的太开心了’，情绪比照片介绍更想先说。",
+          "scores": {
+            "expression": 2,
+            "detail": -1
+          }
+        }
+      ],
+      "selection": {
+        "mode": "multiple",
+        "maxSelections": 2
+      }
+    },
+    {
+      "id": "P07",
+      "prompt": "晚饭后没事要忙，你准备在房间里休息。灯通常会怎么开？",
+      "focus": "晚饭后的灯",
+      "primaryAxis": "light",
+      "weights": {
+        "light": 1
+      },
+      "options": [
+        {
+          "id": "P07_o1",
+          "text": "只留一盏小灯，暗一点舒服。",
+          "scores": {
+            "light": -1
+          }
+        },
+        {
+          "id": "P07_o2",
+          "text": "开手边的台灯，其他地方不用太亮。",
+          "scores": {
+            "light": 0
+          }
+        },
+        {
+          "id": "P07_o3",
+          "text": "开一盏能把这块地方照亮的暖灯。",
+          "scores": {
+            "light": 1
+          }
+        },
+        {
+          "id": "P07_o4",
+          "text": "多开几盏，让屋里看起来亮堂。",
+          "scores": {
+            "light": 2
+          }
+        }
+      ],
+      "selection": {
+        "mode": "single"
+      }
+    },
+    {
+      "id": "P08",
+      "prompt": "走路时听到一首很喜欢的歌，你更接近哪种状态？",
+      "focus": "听歌时身体的节拍",
+      "primaryAxis": "rhythm",
+      "weights": {
+        "rhythm": 1
+      },
+      "options": [
+        {
+          "id": "P08_o1",
+          "text": "步子还是慢慢的，听着就很好。",
+          "scores": {
+            "rhythm": -1
+          }
+        },
+        {
+          "id": "P08_o2",
+          "text": "放松地走，偶尔停下来再听一会儿。",
+          "scores": {
+            "rhythm": 0
+          }
+        },
+        {
+          "id": "P08_o3",
+          "text": "步子不知不觉跟着节奏走起来。",
+          "scores": {
+            "rhythm": 1
+          }
+        },
+        {
+          "id": "P08_o4",
+          "text": "会点头、跟唱，连动作都比刚才多了。",
+          "scores": {
+            "rhythm": 2
+          }
+        }
+      ],
+      "selection": {
+        "mode": "single"
+      }
+    },
+    {
+      "id": "P09",
+      "prompt": "朋友换了客厅布置，问你觉得怎么样。你更容易先注意到？",
+      "focus": "看一间重新布置的客厅",
+      "primaryAxis": "detail",
+      "weights": {
+        "detail": 1
+      },
+      "options": [
+        {
+          "id": "P09_o1",
+          "text": "整个房间是更开阔了，还是更温暖了。",
+          "scores": {
+            "detail": -1
+          }
+        },
+        {
+          "id": "P09_o2",
+          "text": "最大的一件家具换了位置。",
+          "scores": {
+            "detail": 0
+          }
+        },
+        {
+          "id": "P09_o3",
+          "text": "几件小东西的颜色搭得挺有意思。",
+          "scores": {
+            "detail": 1
+          }
+        },
+        {
+          "id": "P09_o4",
+          "text": "连柜门把手、摆件朝向和布料纹理都想看一看。",
+          "scores": {
+            "detail": 2
+          }
+        }
+      ],
+      "selection": {
+        "mode": "single"
+      }
+    },
+    {
+      "id": "P10",
+      "prompt": "准备出去玩一天，地点和花费都没什么压力。你通常会怎么做准备？",
+      "focus": "出门前怎样安排",
+      "primaryAxis": "order",
+      "weights": {
+        "order": 1
+      },
+      "options": [
+        {
+          "id": "P10_o1",
+          "text": "到了附近再走走看，不急着定路线。",
+          "scores": {
+            "order": -1
+          }
+        },
+        {
+          "id": "P10_o2",
+          "text": "记住一两个想去的地方就够了。",
+          "scores": {
+            "order": 0
+          }
+        },
+        {
+          "id": "P10_o3",
+          "text": "先把顺路的地方排一排，省得来回跑。",
+          "scores": {
+            "order": 1
+          }
+        },
+        {
+          "id": "P10_o4",
+          "text": "连交通和大概几点到都先安排好。",
+          "scores": {
+            "order": 2
+          }
+        }
+      ],
+      "selection": {
+        "mode": "single"
+      }
+    },
+    {
+      "id": "P11",
+      "prompt": "聚会时想拍几张照片留着，你更可能先拍什么？",
+      "focus": "给一次聚会留影",
+      "primaryAxis": "company",
+      "weights": {
+        "company": 1
+      },
+      "options": [
+        {
+          "id": "P11_o1",
+          "text": "桌上的杯子、窗外的光，暂时不拍人。",
+          "scores": {
+            "company": -1
+          }
+        },
+        {
+          "id": "P11_o2",
+          "text": "和最熟的那个人一起拍一张。",
+          "scores": {
+            "company": 0
+          }
+        },
+        {
+          "id": "P11_o3",
+          "text": "几个人正在聊天、吃东西的样子。",
+          "scores": {
+            "company": 1
+          }
+        },
+        {
+          "id": "P11_o4",
+          "text": "叫大家靠过来，拍一张热热闹闹的大合照。",
+          "scores": {
+            "company": 2
+          }
+        }
+      ],
+      "selection": {
+        "mode": "single"
+      }
+    },
+    {
+      "id": "P12",
+      "prompt": "朋友做了一件你很喜欢的小东西，拿给你看。你的反应更像？",
+      "focus": "夸一件真心喜欢的小东西",
+      "primaryAxis": "expression",
+      "weights": {
+        "expression": 1
+      },
+      "options": [
+        {
+          "id": "P12_o1",
+          "text": "笑着认真看一会儿，心里觉得挺好。",
+          "scores": {
+            "expression": -1
+          }
+        },
+        {
+          "id": "P12_o2",
+          "text": "直接说一句：“这个挺好看的。”",
+          "scores": {
+            "expression": 0
+          }
+        },
+        {
+          "id": "P12_o3",
+          "text": "指着喜欢的地方，告诉他为什么。",
+          "scores": {
+            "expression": 1
+          }
+        },
+        {
+          "id": "P12_o4",
+          "text": "忍不住连着夸几句，喜欢的劲儿藏不太住。",
+          "scores": {
+            "expression": 2
+          }
+        }
+      ],
+      "selection": {
+        "mode": "single"
+      }
+    },
+    {
+      "id": "P13",
+      "prompt": "换手机壁纸，不考虑具体人物。哪些画面会让你想每天看见？",
+      "focus": "手机里的日常底色",
+      "primaryAxis": "light",
+      "weights": {
+        "light": 1,
+        "expression": 0.35
+      },
+      "options": [
+        {
+          "id": "P13_o1",
+          "text": "只有几盏灯的夜路，大片暗处也觉得舒服。",
+          "scores": {
+            "light": -2,
+            "expression": -1
+          }
+        },
+        {
+          "id": "P13_o2",
+          "text": "阴天或薄雾里的建筑，颜色灰一点、轻一点。",
+          "scores": {
+            "light": -1,
+            "expression": -2
+          }
+        },
+        {
+          "id": "P13_o3",
+          "text": "阳光穿过窗边，桌上只有杯子和一片树影。",
+          "scores": {
+            "light": 1,
+            "expression": -1
+          }
+        },
+        {
+          "id": "P13_o4",
+          "text": "太阳下鲜亮的花、海水或人群，一打开手机就很醒目。",
+          "scores": {
+            "light": 2,
+            "expression": 2
+          }
+        }
+      ],
+      "selection": {
+        "mode": "multiple",
+        "maxSelections": 2
+      }
+    },
+    {
+      "id": "P14",
+      "prompt": "忙了半天，终于有十五分钟不用做事。哪些休息方式你会选？",
+      "focus": "短短十五分钟",
+      "primaryAxis": "rhythm",
+      "weights": {
+        "rhythm": 1,
+        "order": 0.35
+      },
+      "options": [
+        {
+          "id": "P14_o1",
+          "text": "躺着闭一会儿眼，连手机也不看，尽量不再接收什么。",
+          "scores": {
+            "rhythm": -2,
+            "order": -1
+          }
+        },
+        {
+          "id": "P14_o2",
+          "text": "坐着喝水，顺手把桌上的东西归一归位。",
+          "scores": {
+            "rhythm": -1,
+            "order": 2
+          }
+        },
+        {
+          "id": "P14_o3",
+          "text": "出门走一小圈，不一定去哪儿，换个地方就舒服一些。",
+          "scores": {
+            "rhythm": 1,
+            "order": -1
+          }
+        },
+        {
+          "id": "P14_o4",
+          "text": "去楼下活动活动身体，走快一点，回来再接着忙。",
+          "scores": {
+            "rhythm": 2,
+            "order": 1
+          }
+        }
+      ],
+      "selection": {
+        "mode": "multiple",
+        "maxSelections": 2
+      }
+    },
+    {
+      "id": "P15",
+      "prompt": "走进一个没去过的市集，哪些东西可能真的把你留住？",
+      "focus": "市集里让你停下来的东西",
+      "primaryAxis": "detail",
+      "weights": {
+        "detail": 1,
+        "order": 0.35
+      },
+      "options": [
+        {
+          "id": "P15_o1",
+          "text": "整条街混在一起的颜色、音乐和人声，越杂越有意思。",
+          "scores": {
+            "detail": -2,
+            "order": -2
+          }
+        },
+        {
+          "id": "P15_o2",
+          "text": "某个摊位配色干净，东西摆得整整齐齐。",
+          "scores": {
+            "detail": -1,
+            "order": 2
+          }
+        },
+        {
+          "id": "P15_o3",
+          "text": "一只杯子的釉色、一小块布的花纹，想拿起来仔细看。",
+          "scores": {
+            "detail": 1,
+            "order": 0
+          }
+        },
+        {
+          "id": "P15_o4",
+          "text": "看看接缝、针脚或刻痕，想知道这样一件东西是怎么做出来的。",
+          "scores": {
+            "detail": 2,
+            "order": 1
+          }
+        }
+      ],
+      "selection": {
+        "mode": "multiple",
+        "maxSelections": 2
+      }
+    },
+    {
+      "id": "P16",
+      "prompt": "想把几张照片发成一组，你可能会怎么选？",
+      "focus": "把几张照片放在一起",
+      "primaryAxis": "order",
+      "weights": {
+        "order": 1,
+        "detail": 0.35
+      },
+      "options": [
+        {
+          "id": "P16_o1",
+          "text": "按当时的心情挑几张，顺序无所谓，喜欢就发。",
+          "scores": {
+            "order": -2,
+            "detail": 0
+          }
+        },
+        {
+          "id": "P16_o2",
+          "text": "只留最有感觉的一张，别的都不要了。",
+          "scores": {
+            "order": -1,
+            "detail": -1
+          }
+        },
+        {
+          "id": "P16_o3",
+          "text": "按一天的先后排，让没去过的人也能跟着走一遍。",
+          "scores": {
+            "order": 1,
+            "detail": 0
+          }
+        },
+        {
+          "id": "P16_o4",
+          "text": "颜色、留白、横竖都搭好，边边角角也看着顺才发。",
+          "scores": {
+            "order": 2,
+            "detail": 2
+          }
+        }
+      ],
+      "selection": {
+        "mode": "multiple",
+        "maxSelections": 2
+      }
+    },
+    {
+      "id": "P17",
+      "prompt": "旅行挑明信片，哪些画面会让你想带回来？",
+      "focus": "想带回来的明信片",
+      "primaryAxis": "company",
+      "weights": {
+        "company": 1,
+        "expression": 0.35
+      },
+      "options": [
+        {
+          "id": "P17_o1",
+          "text": "没有人的路口，一大片空处，只有一点点灯光。",
+          "scores": {
+            "company": -2,
+            "expression": -2
+          }
+        },
+        {
+          "id": "P17_o2",
+          "text": "远处只有一个人的背影，看不清表情也没关系。",
+          "scores": {
+            "company": -1,
+            "expression": -1
+          }
+        },
+        {
+          "id": "P17_o3",
+          "text": "几个人在门口吃饭或聊天，好像能听见他们说什么。",
+          "scores": {
+            "company": 1,
+            "expression": 0
+          }
+        },
+        {
+          "id": "P17_o4",
+          "text": "正在庆祝的广场或赶集的街道，每个人的动作都很鲜明。",
+          "scores": {
+            "company": 2,
+            "expression": 2
+          }
+        }
+      ],
+      "selection": {
+        "mode": "multiple",
+        "maxSelections": 2
+      }
+    },
+    {
+      "id": "P18",
+      "prompt": "和朋友吃到一样你很喜欢的东西，你的反应可能有哪些？",
+      "focus": "吃到喜欢的东西",
+      "primaryAxis": "expression",
+      "weights": {
+        "expression": 1,
+        "detail": 0.35
+      },
+      "options": [
+        {
+          "id": "P18_o1",
+          "text": "不太说话，点点头，默默多吃几口。",
+          "scores": {
+            "expression": -2,
+            "detail": -1
+          }
+        },
+        {
+          "id": "P18_o2",
+          "text": "说一句‘不错，下次还来’，不细讲为什么。",
+          "scores": {
+            "expression": -1,
+            "detail": -1
+          }
+        },
+        {
+          "id": "P18_o3",
+          "text": "讲讲外皮、香味或哪种调料，让他也注意那个地方。",
+          "scores": {
+            "expression": 1,
+            "detail": 2
+          }
+        },
+        {
+          "id": "P18_o4",
+          "text": "眼睛一亮，立刻叫他快尝，语气和动作都藏不住喜欢。",
+          "scores": {
+            "expression": 2,
+            "detail": 0
+          }
+        }
+      ],
+      "selection": {
+        "mode": "multiple",
+        "maxSelections": 2
+      }
+    },
+    {
+      "id": "P19",
+      "prompt": "临时住一晚的房间，其他条件相同，你更偏向哪一种？",
+      "focus": "一晚想住的房间",
+      "primaryAxis": "light",
+      "weights": {
+        "light": 1
+      },
+      "options": [
+        {
+          "id": "P19_o1",
+          "text": "光线低一点，晚上显得安静。",
+          "scores": {
+            "light": -1
+          }
+        },
+        {
+          "id": "P19_o2",
+          "text": "窗外光很柔和，不会一下把屋里照亮。",
+          "scores": {
+            "light": 0
+          }
+        },
+        {
+          "id": "P19_o3",
+          "text": "白天窗边有一块明亮的地方。",
+          "scores": {
+            "light": 1
+          }
+        },
+        {
+          "id": "P19_o4",
+          "text": "有大窗或小阳台，早上能被日光照到。",
+          "scores": {
+            "light": 2
+          }
+        }
+      ],
+      "selection": {
+        "mode": "single"
+      }
+    },
+    {
+      "id": "P20",
+      "prompt": "和朋友聊起一件最近发生的事，你更喜欢哪种聊天节奏？",
+      "focus": "聊天时舒服的节奏",
+      "primaryAxis": "rhythm",
+      "weights": {
+        "rhythm": 1
+      },
+      "options": [
+        {
+          "id": "P20_o1",
+          "text": "一句一句慢慢说，中间停一会儿也自在。",
+          "scores": {
+            "rhythm": -1
+          }
+        },
+        {
+          "id": "P20_o2",
+          "text": "把一件事讲完，再换下一个话题。",
+          "scores": {
+            "rhythm": 0
+          }
+        },
+        {
+          "id": "P20_o3",
+          "text": "想到什么就接着聊，话题会自然转过去。",
+          "scores": {
+            "rhythm": 1
+          }
+        },
+        {
+          "id": "P20_o4",
+          "text": "你一言我一语，新的话头接连冒出来。",
+          "scores": {
+            "rhythm": 2
+          }
+        }
+      ],
+      "selection": {
+        "mode": "single"
+      }
+    },
+    {
+      "id": "P21",
+      "prompt": "想给自己买本普通笔记本，几本都够用。你更容易先看什么？",
+      "focus": "挑一本日常用的笔记本",
+      "primaryAxis": "detail",
+      "weights": {
+        "detail": 1
+      },
+      "options": [
+        {
+          "id": "P21_o1",
+          "text": "整体顺不顺眼，拿着喜欢就行。",
+          "scores": {
+            "detail": -1
+          }
+        },
+        {
+          "id": "P21_o2",
+          "text": "封面的主色和大小。",
+          "scores": {
+            "detail": 0
+          }
+        },
+        {
+          "id": "P21_o3",
+          "text": "纸摸起来的感觉、边缘和小图案。",
+          "scores": {
+            "detail": 1
+          }
+        },
+        {
+          "id": "P21_o4",
+          "text": "翻翻装订、页线和细处，想挑得都合心意。",
+          "scores": {
+            "detail": 2
+          }
+        }
+      ],
+      "selection": {
+        "mode": "single"
+      }
+    },
+    {
+      "id": "P22",
+      "prompt": "用完书桌准备去休息，东西通常会留成什么样？",
+      "focus": "离开书桌前",
+      "primaryAxis": "order",
+      "weights": {
+        "order": 1
+      },
+      "options": [
+        {
+          "id": "P22_o1",
+          "text": "保持刚用过的样子，下次接着用。",
+          "scores": {
+            "order": -1
+          }
+        },
+        {
+          "id": "P22_o2",
+          "text": "把影响走动或容易掉的东西收一下。",
+          "scores": {
+            "order": 0
+          }
+        },
+        {
+          "id": "P22_o3",
+          "text": "按类别大致整理，桌面腾出来。",
+          "scores": {
+            "order": 1
+          }
+        },
+        {
+          "id": "P22_o4",
+          "text": "都放回固定地方，再把椅子推好。",
+          "scores": {
+            "order": 2
+          }
+        }
+      ],
+      "selection": {
+        "mode": "single"
+      }
+    },
+    {
+      "id": "P23",
+      "prompt": "聚会已经开始一会儿了，屋里有几个不同的小圈子。你更想待在哪儿？",
+      "focus": "聚会里的舒服位置",
+      "primaryAxis": "company",
+      "weights": {
+        "company": 1
+      },
+      "options": [
+        {
+          "id": "P23_o1",
+          "text": "先找个安静角落，自己待一会儿。",
+          "scores": {
+            "company": -1
+          }
+        },
+        {
+          "id": "P23_o2",
+          "text": "和一两个熟人轻声聊聊。",
+          "scores": {
+            "company": 0
+          }
+        },
+        {
+          "id": "P23_o3",
+          "text": "坐进三四个人的聊天里，有来有往。",
+          "scores": {
+            "company": 1
+          }
+        },
+        {
+          "id": "P23_o4",
+          "text": "去最热闹的那一圈，听大家接话和说笑。",
+          "scores": {
+            "company": 2
+          }
+        }
+      ],
+      "selection": {
+        "mode": "single"
+      }
+    },
+    {
+      "id": "P24",
+      "prompt": "有点郁闷，刚好有个信任的朋友来问你今天怎么样。你更可能怎么说？",
+      "focus": "说出一点不开心",
+      "primaryAxis": "expression",
+      "weights": {
+        "expression": 1
+      },
+      "options": [
+        {
+          "id": "P24_o1",
+          "text": "先说“还行”，暂时不想展开。",
+          "scores": {
+            "expression": -1
+          }
+        },
+        {
+          "id": "P24_o2",
+          "text": "简单讲讲发生了什么。",
+          "scores": {
+            "expression": 0
+          }
+        },
+        {
+          "id": "P24_o3",
+          "text": "除了经过，也会说自己当时是什么感觉。",
+          "scores": {
+            "expression": 1
+          }
+        },
+        {
+          "id": "P24_o4",
+          "text": "直接告诉他现在的情绪，话和语气都会比较明显。",
+          "scores": {
+            "expression": 2
+          }
+        }
+      ],
+      "selection": {
+        "mode": "single"
+      }
+    }
+  ],
+  "outcomes": [
+    {
+      "id": "wheat_cypresses",
+      "name": "《麦田与柏树》",
+      "style": "文森特·梵高",
+      "title": "让平常的日子，带一点向前的风",
+      "summary": "金色麦田、旋转的云和挺立的柏树，把整个夏日推成一阵有方向的风。画面没有把热烈收起来，连远处的山都跟着起伏；每一道笔触都像在提醒你，眼前的世界还有许多可以投入的事。",
+      "quote": "风吹过麦田，颜色也有自己的节拍。",
+      "keywords": [
+        "热烈",
+        "风动",
+        "投入"
+      ],
+      "nextStep": "到开阔一点的地方走走，留意树梢、云和风一起动起来的样子。",
+      "references": [
+        {
+          "title": "《麦田与柏树》",
+          "by": "文森特·梵高 · 1889年"
+        }
+      ],
+      "sources": [
+        {
+          "title": "大都会艺术博物馆 · 作品资料",
+          "url": "https://www.metmuseum.org/art/collection/search/436535"
+        }
+      ],
+      "referenceAnswers": {
+        "P01": "P01_o4",
+        "P02": [
+          "P02_o2",
+          "P02_o3"
+        ],
+        "P03": [
+          "P03_o1",
+          "P03_o2"
+        ],
+        "P04": "P04_o1",
+        "P05": [
+          "P05_o1",
+          "P05_o2"
+        ],
+        "P06": "P06_o4",
+        "P07": "P07_o4",
+        "P08": "P08_o4",
+        "P09": "P09_o4",
+        "P10": "P10_o1",
+        "P11": "P11_o1",
+        "P12": "P12_o4",
+        "P13": "P13_o4",
+        "P14": "P14_o4",
+        "P15": "P15_o3",
+        "P16": "P16_o1",
+        "P17": "P17_o1",
+        "P18": "P18_o4",
+        "P19": "P19_o3",
+        "P20": "P20_o4",
+        "P21": "P21_o3",
+        "P22": "P22_o2",
+        "P23": "P23_o1",
+        "P24": "P24_o4"
+      },
+      "designTarget": {
+        "light": 90,
+        "rhythm": 85,
+        "detail": 50,
+        "order": 15,
+        "company": 0,
+        "expression": 100
+      },
+      "image": {
+        "src": "assets/art/wheat-cypresses.jpg",
+        "alt": "金黄色麦田旁立着深绿柏树，蓝白云层与远处群山以起伏的笔触相接。",
+        "credit": "文森特·梵高 · 1889年 · 大都会艺术博物馆",
+        "license": "CC0 / Public Domain",
+        "sourceUrl": "https://www.metmuseum.org/art/collection/search/436535"
+      },
+      "designTargetNote": "本项目依据作品氛围原创设定的设计目标，不是作者、导演或画家的心理数据；展示参考轮廓由同一套题目的实际可选答卷计算。"
+    },
+    {
+      "id": "jalais_hill",
+      "name": "《蓬图瓦兹的雅莱山》",
+      "style": "卡米耶·毕沙罗",
+      "title": "给日常，留一条慢慢走的路",
+      "summary": "小路缓缓转向村庄，田地与山坡把视线带到更远的地方。没有哪一处急着成为主角，树木、屋舍与行人各自在画面里安稳存在；像一次不用赶路的散步，让心情顺着地势慢慢舒展开来。",
+      "quote": "远处是风景，脚下也是生活。",
+      "keywords": [
+        "宁静",
+        "远望",
+        "乡间"
+      ],
+      "nextStep": "挑一条能看见树木和房子的路，不赶时间地走一段。",
+      "references": [
+        {
+          "title": "《蓬图瓦兹的雅莱山》",
+          "by": "卡米耶·毕沙罗 · 1867年"
+        }
+      ],
+      "sources": [
+        {
+          "title": "大都会艺术博物馆 · 作品资料",
+          "url": "https://www.metmuseum.org/art/collection/search/437299"
+        }
+      ],
+      "referenceAnswers": {
+        "P01": "P01_o4",
+        "P02": "P02_o1",
+        "P03": "P03_o2",
+        "P04": "P04_o3",
+        "P05": [
+          "P05_o1",
+          "P05_o3"
+        ],
+        "P06": "P06_o1",
+        "P07": "P07_o4",
+        "P08": "P08_o1",
+        "P09": "P09_o2",
+        "P10": "P10_o3",
+        "P11": "P11_o2",
+        "P12": "P12_o1",
+        "P13": [
+          "P13_o2",
+          "P13_o3"
+        ],
+        "P14": "P14_o1",
+        "P15": [
+          "P15_o1",
+          "P15_o3"
+        ],
+        "P16": "P16_o4",
+        "P17": [
+          "P17_o1",
+          "P17_o3"
+        ],
+        "P18": [
+          "P18_o1",
+          "P18_o2"
+        ],
+        "P19": "P19_o2",
+        "P20": "P20_o3",
+        "P21": "P21_o3",
+        "P22": "P22_o2",
+        "P23": "P23_o1",
+        "P24": "P24_o4"
+      },
+      "designTarget": {
+        "light": 70,
+        "rhythm": 15,
+        "detail": 40,
+        "order": 65,
+        "company": 30,
+        "expression": 25
+      },
+      "image": {
+        "src": "assets/art/jalais-hill.jpg",
+        "alt": "乡间小路绕过绿色坡地通向村庄，路上有少数行人，远处山坡与屋舍展开成安静风景。",
+        "credit": "卡米耶·毕沙罗 · 1867年 · 大都会艺术博物馆",
+        "license": "CC0 / Public Domain",
+        "sourceUrl": "https://www.metmuseum.org/art/collection/search/437299"
+      },
+      "designTargetNote": "本项目依据作品氛围原创设定的设计目标，不是作者、导演或画家的心理数据；展示参考轮廓由同一套题目的实际可选答卷计算。"
+    },
+    {
+      "id": "seashore",
+      "name": "《海边》",
+      "style": "皮埃尔－奥古斯特·雷诺阿",
+      "title": "和亲近的人，在明亮里坐一会儿",
+      "summary": "海风似乎停在人物身旁，衣裙与远处的水色把光线柔柔接住。这里的安静并不空旷，而像给自己留出一小段不被催促的时间；坐稳、望远，让一天的细节慢慢从眼前经过。",
+      "quote": "有些自在，是一起待着时有的。",
+      "keywords": [
+        "日光",
+        "独处",
+        "柔和"
+      ],
+      "nextStep": "找个光线舒服的地方，和熟悉的人待一会儿，留张不必摆好的照片。",
+      "references": [
+        {
+          "title": "《海边》",
+          "by": "皮埃尔－奥古斯特·雷诺阿 · 1883年"
+        }
+      ],
+      "sources": [
+        {
+          "title": "大都会艺术博物馆 · 作品资料",
+          "url": "https://www.metmuseum.org/art/collection/search/437430"
+        }
+      ],
+      "referenceAnswers": {
+        "P01": [
+          "P01_o3",
+          "P01_o4"
+        ],
+        "P02": "P02_o1",
+        "P03": [
+          "P03_o3",
+          "P03_o4"
+        ],
+        "P04": "P04_o4",
+        "P05": "P05_o1",
+        "P06": "P06_o1",
+        "P07": "P07_o4",
+        "P08": "P08_o1",
+        "P09": "P09_o4",
+        "P10": "P10_o2",
+        "P11": "P11_o1",
+        "P12": "P12_o3",
+        "P13": [
+          "P13_o3",
+          "P13_o4"
+        ],
+        "P14": [
+          "P14_o1",
+          "P14_o2"
+        ],
+        "P15": "P15_o1",
+        "P16": [
+          "P16_o3",
+          "P16_o4"
+        ],
+        "P17": "P17_o2",
+        "P18": [
+          "P18_o1",
+          "P18_o3"
+        ],
+        "P19": "P19_o2",
+        "P20": "P20_o4",
+        "P21": "P21_o4",
+        "P22": "P22_o2",
+        "P23": "P23_o1",
+        "P24": "P24_o4"
+      },
+      "designTarget": {
+        "light": 80,
+        "rhythm": 25,
+        "detail": 65,
+        "order": 60,
+        "company": 10,
+        "expression": 45
+      },
+      "image": {
+        "src": "assets/art/seashore.jpg",
+        "alt": "一位戴帽的年轻女子坐在海岸背景前，深色衣裙与蓝绿色水色形成柔和对比。",
+        "credit": "皮埃尔－奥古斯特·雷诺阿 · 1883年 · 大都会艺术博物馆",
+        "license": "CC0 / Public Domain",
+        "sourceUrl": "https://www.metmuseum.org/art/collection/search/437430"
+      },
+      "designTargetNote": "本项目依据作品氛围原创设定的设计目标，不是作者、导演或画家的心理数据；展示参考轮廓由同一套题目的实际可选答卷计算。"
+    },
+    {
+      "id": "dance_class",
+      "name": "《舞蹈课》",
+      "style": "埃德加·德加",
+      "title": "在往来和动作里，找到自己的节奏",
+      "summary": "练习室里有人起舞，有人等待，也有人低头整理衣裙。动作与停顿共处在同一个空间，让日常的反复显出自己的节奏；光线落在浅色裙摆上，一次认真练习也可以成为值得停留的画面。",
+      "quote": "一间平常的屋子，也会因为人而有了变化。",
+      "keywords": [
+        "练习",
+        "秩序",
+        "相伴"
+      ],
+      "nextStep": "留意一次熟悉的活动里，不同的人是怎样走动、等待和接话的。",
+      "references": [
+        {
+          "title": "《舞蹈课》",
+          "by": "埃德加·德加 · 1874年"
+        }
+      ],
+      "sources": [
+        {
+          "title": "大都会艺术博物馆 · 作品资料",
+          "url": "https://www.metmuseum.org/art/collection/search/438817"
+        }
+      ],
+      "referenceAnswers": {
+        "P01": "P01_o4",
+        "P02": "P02_o1",
+        "P03": "P03_o4",
+        "P04": "P04_o4",
+        "P05": "P05_o4",
+        "P06": [
+          "P06_o2",
+          "P06_o4"
+        ],
+        "P07": "P07_o4",
+        "P08": "P08_o4",
+        "P09": "P09_o4",
+        "P10": "P10_o4",
+        "P11": "P11_o4",
+        "P12": "P12_o2",
+        "P13": [
+          "P13_o3",
+          "P13_o4"
+        ],
+        "P14": [
+          "P14_o2",
+          "P14_o4"
+        ],
+        "P15": "P15_o4",
+        "P16": "P16_o4",
+        "P17": [
+          "P17_o3",
+          "P17_o4"
+        ],
+        "P18": "P18_o1",
+        "P19": "P19_o1",
+        "P20": "P20_o4",
+        "P21": "P21_o3",
+        "P22": "P22_o2",
+        "P23": "P23_o4",
+        "P24": "P24_o4"
+      },
+      "designTarget": {
+        "light": 75,
+        "rhythm": 60,
+        "detail": 85,
+        "order": 85,
+        "company": 95,
+        "expression": 55
+      },
+      "image": {
+        "src": "assets/art/dance-class.jpg",
+        "alt": "芭蕾练习室里聚着穿浅色舞裙的学员与教师，有人演示动作，有人停留等待。",
+        "credit": "埃德加·德加 · 1874年 · 大都会艺术博物馆",
+        "license": "CC0 / Public Domain",
+        "sourceUrl": "https://www.metmuseum.org/art/collection/search/438817"
+      },
+      "designTargetNote": "本项目依据作品氛围原创设定的设计目标，不是作者、导演或画家的心理数据；展示参考轮廓由同一套题目的实际可选答卷计算。"
+    },
+    {
+      "id": "great_wave",
+      "name": "《神奈川冲浪里》",
+      "style": "葛饰北斋",
+      "title": "让流动的日子，有自己的力度",
+      "summary": "浪峰卷起的瞬间像把时间拉紧，小船沿着弧线向前，远处的富士山仍然安静。蓝与白之间既有冲劲，也有可供凝望的距离；动势越鲜明，那个稳定的远方就越清楚。",
+      "quote": "风浪很大，目光还在往前。",
+      "keywords": [
+        "动势",
+        "张力",
+        "远方"
+      ],
+      "nextStep": "给自己找一个可以活动起来的小空当，散步或听歌走一圈都行。",
+      "references": [
+        {
+          "title": "《神奈川冲浪里》",
+          "by": "葛饰北斋 · 约1830—1832年（按Met目录）"
+        }
+      ],
+      "sources": [
+        {
+          "title": "大都会艺术博物馆 · 作品资料",
+          "url": "https://www.metmuseum.org/art/collection/search/45434"
+        }
+      ],
+      "referenceAnswers": {
+        "P01": [
+          "P01_o3",
+          "P01_o4"
+        ],
+        "P02": "P02_o4",
+        "P03": "P03_o4",
+        "P04": "P04_o4",
+        "P05": "P05_o4",
+        "P06": "P06_o4",
+        "P07": "P07_o2",
+        "P08": "P08_o4",
+        "P09": "P09_o4",
+        "P10": "P10_o3",
+        "P11": "P11_o2",
+        "P12": "P12_o4",
+        "P13": "P13_o4",
+        "P14": "P14_o4",
+        "P15": [
+          "P15_o3",
+          "P15_o4"
+        ],
+        "P16": [
+          "P16_o1",
+          "P16_o4"
+        ],
+        "P17": "P17_o2",
+        "P18": "P18_o4",
+        "P19": "P19_o1",
+        "P20": "P20_o4",
+        "P21": "P21_o4",
+        "P22": "P22_o2",
+        "P23": "P23_o1",
+        "P24": "P24_o4"
+      },
+      "designTarget": {
+        "light": 60,
+        "rhythm": 100,
+        "detail": 85,
+        "order": 65,
+        "company": 45,
+        "expression": 95
+      },
+      "image": {
+        "src": "assets/art/great-wave.jpg",
+        "alt": "蓝白巨浪卷成弧线，几艘小船伏在浪间，远处可见小小的富士山。",
+        "credit": "葛饰北斋 · 约1830—1832年（按Met目录） · 大都会艺术博物馆",
+        "license": "CC0 / Public Domain",
+        "sourceUrl": "https://www.metmuseum.org/art/collection/search/45434"
+      },
+      "designTargetNote": "本项目依据作品氛围原创设定的设计目标，不是作者、导演或画家的心理数据；展示参考轮廓由同一套题目的实际可选答卷计算。"
+    },
+    {
+      "id": "circus_sideshow",
+      "name": "《马戏团的招徕表演》",
+      "style": "乔治·修拉",
+      "title": "给夜色，也留一盏灯",
+      "summary": "夜色把舞台和观众轻轻压进同一片光里，整齐的身影、乐器与灯火像一段正在展开的序曲。热闹尚未完全释放，目光已经聚拢；画面的吸引力藏在集体等待的那一刻。",
+      "quote": "灯光背后，也可以有一块安静的地方。",
+      "keywords": [
+        "夜色",
+        "人群",
+        "期待"
+      ],
+      "nextStep": "在晚上回家的路上，找一处让你愿意多看一眼的灯光。",
+      "references": [
+        {
+          "title": "《马戏团的招徕表演》",
+          "by": "乔治·修拉 · 1887—1888年"
+        }
+      ],
+      "sources": [
+        {
+          "title": "大都会艺术博物馆 · 作品资料",
+          "url": "https://www.metmuseum.org/art/collection/search/437654"
+        }
+      ],
+      "referenceAnswers": {
+        "P01": "P01_o1",
+        "P02": "P02_o1",
+        "P03": "P03_o4",
+        "P04": "P04_o4",
+        "P05": "P05_o4",
+        "P06": [
+          "P06_o1",
+          "P06_o3"
+        ],
+        "P07": "P07_o1",
+        "P08": "P08_o2",
+        "P09": "P09_o4",
+        "P10": "P10_o4",
+        "P11": "P11_o4",
+        "P12": "P12_o3",
+        "P13": [
+          "P13_o2",
+          "P13_o3"
+        ],
+        "P14": [
+          "P14_o2",
+          "P14_o4"
+        ],
+        "P15": "P15_o2",
+        "P16": "P16_o3",
+        "P17": "P17_o4",
+        "P18": "P18_o2",
+        "P19": "P19_o1",
+        "P20": "P20_o4",
+        "P21": "P21_o3",
+        "P22": "P22_o2",
+        "P23": "P23_o4",
+        "P24": "P24_o4"
+      },
+      "designTarget": {
+        "light": 15,
+        "rhythm": 45,
+        "detail": 65,
+        "order": 80,
+        "company": 100,
+        "expression": 55
+      },
+      "image": {
+        "src": "assets/art/circus-sideshow.jpg",
+        "alt": "夜色中的马戏团招徕舞台被灯光照亮，乐手、主持人与前景观众形成整齐而密集的人群。",
+        "credit": "乔治·修拉 · 1887—1888年 · 大都会艺术博物馆",
+        "license": "CC0 / Public Domain",
+        "sourceUrl": "https://www.metmuseum.org/art/collection/search/437654"
+      },
+      "designTargetNote": "本项目依据作品氛围原创设定的设计目标，不是作者、导演或画家的心理数据；展示参考轮廓由同一套题目的实际可选答卷计算。"
+    },
+    {
+      "id": "apples_primroses",
+      "name": "《苹果与报春花静物》",
+      "style": "保罗·塞尚",
+      "title": "把平常的小东西，摆进生活",
+      "summary": "苹果、花盆和桌布让目光在一处小小的角落反复停留。颜色各有重量，物件之间也各有距离；看似寻常的静物慢慢显出层次，像把一天里的琐碎重新摆好，便发现了新的趣味。",
+      "quote": "一只苹果，也值得被好好看见。",
+      "keywords": [
+        "细节",
+        "静物",
+        "层次"
+      ],
+      "nextStep": "把两三件常用小东西放在一起，看看它们的颜色和位置。",
+      "references": [
+        {
+          "title": "《苹果与报春花静物》",
+          "by": "保罗·塞尚 · 约1890年"
+        }
+      ],
+      "sources": [
+        {
+          "title": "大都会艺术博物馆 · 作品资料",
+          "url": "https://www.metmuseum.org/art/collection/search/435882"
+        }
+      ],
+      "referenceAnswers": {
+        "P01": "P01_o4",
+        "P02": [
+          "P02_o1",
+          "P02_o2"
+        ],
+        "P03": "P03_o4",
+        "P04": "P04_o4",
+        "P05": "P05_o1",
+        "P06": "P06_o3",
+        "P07": "P07_o2",
+        "P08": "P08_o1",
+        "P09": "P09_o4",
+        "P10": "P10_o4",
+        "P11": "P11_o1",
+        "P12": "P12_o4",
+        "P13": [
+          "P13_o2",
+          "P13_o4"
+        ],
+        "P14": [
+          "P14_o1",
+          "P14_o2"
+        ],
+        "P15": "P15_o4",
+        "P16": [
+          "P16_o1",
+          "P16_o4"
+        ],
+        "P17": "P17_o1",
+        "P18": [
+          "P18_o1",
+          "P18_o3"
+        ],
+        "P19": "P19_o1",
+        "P20": "P20_o3",
+        "P21": "P21_o4",
+        "P22": "P22_o2",
+        "P23": "P23_o1",
+        "P24": "P24_o4"
+      },
+      "designTarget": {
+        "light": 55,
+        "rhythm": 20,
+        "detail": 95,
+        "order": 70,
+        "company": 0,
+        "expression": 65
+      },
+      "image": {
+        "src": "assets/art/apples-primroses.jpg",
+        "alt": "苹果与报春花盆栽放在铺有桌布的桌面上，布料的褶皱与水果的圆形构成细密层次。",
+        "credit": "保罗·塞尚 · 约1890年 · 大都会艺术博物馆",
+        "license": "CC0 / Public Domain",
+        "sourceUrl": "https://www.metmuseum.org/art/collection/search/435882"
+      },
+      "designTargetNote": "本项目依据作品氛围原创设定的设计目标，不是作者、导演或画家的心理数据；展示参考轮廓由同一套题目的实际可选答卷计算。"
+    },
+    {
+      "id": "lion_repast",
+      "name": "《狮子的进食》",
+      "style": "亨利·卢梭",
+      "title": "让想象，长出自己的枝叶",
+      "summary": "大片叶子层层叠起，陌生的花与树林把视线引向更深处。这个世界有清晰的轮廓，却不急着遵守日常经验；越是认真凝视，越能在安静的绿意里发现故事正在悄悄发生。",
+      "quote": "安静的地方，也藏着许多没讲完的故事。",
+      "keywords": [
+        "想象",
+        "密林",
+        "故事"
+      ],
+      "nextStep": "给眼前的一片绿意多留一点时间，看看叶子之间还有什么。",
+      "references": [
+        {
+          "title": "《狮子的进食》",
+          "by": "亨利·卢梭 · 约1907年"
+        }
+      ],
+      "sources": [
+        {
+          "title": "大都会艺术博物馆 · 作品资料",
+          "url": "https://www.metmuseum.org/art/collection/search/438822"
+        }
+      ],
+      "referenceAnswers": {
+        "P01": [
+          "P01_o1",
+          "P01_o3"
+        ],
+        "P02": [
+          "P02_o1",
+          "P02_o3"
+        ],
+        "P03": "P03_o4",
+        "P04": "P04_o3",
+        "P05": "P05_o1",
+        "P06": "P06_o3",
+        "P07": "P07_o1",
+        "P08": "P08_o4",
+        "P09": "P09_o4",
+        "P10": "P10_o1",
+        "P11": "P11_o1",
+        "P12": "P12_o4",
+        "P13": "P13_o4",
+        "P14": "P14_o1",
+        "P15": "P15_o4",
+        "P16": "P16_o1",
+        "P17": [
+          "P17_o1",
+          "P17_o4"
+        ],
+        "P18": "P18_o4",
+        "P19": "P19_o1",
+        "P20": "P20_o4",
+        "P21": "P21_o4",
+        "P22": "P22_o2",
+        "P23": "P23_o1",
+        "P24": "P24_o4"
+      },
+      "designTarget": {
+        "light": 40,
+        "rhythm": 55,
+        "detail": 95,
+        "order": 30,
+        "company": 15,
+        "expression": 85
+      },
+      "image": {
+        "src": "assets/art/lion-repast.jpg",
+        "alt": "层层叠叠的绿色热带植物与奇异花朵围成森林，一只狮子在叶丛间进食。",
+        "credit": "亨利·卢梭 · 约1907年 · 大都会艺术博物馆",
+        "license": "CC0 / Public Domain",
+        "sourceUrl": "https://www.metmuseum.org/art/collection/search/438822"
+      },
+      "designTargetNote": "本项目依据作品氛围原创设定的设计目标，不是作者、导演或画家的心理数据；展示参考轮廓由同一套题目的实际可选答卷计算。"
+    },
+    {
+      "id": "water_pitcher",
+      "name": "《持水壶的年轻女子》",
+      "style": "约翰内斯·维米尔",
+      "title": "把一天，安稳地放回小事里",
+      "summary": "窗边的光落在水壶、桌布和墙上的地图上，动作很轻，屋里却有清楚的秩序。你喜欢的可能是这种不用赶着说明什么的安稳：东西各在其位，一天从一件小事慢慢开始。它像整理好桌面后坐下来的那一刻，细节都看得见，心也有地方放。",
+      "quote": "窗开一会儿，今天就有了自己的光。",
+      "keywords": [
+        "细致",
+        "安稳",
+        "清晨"
+      ],
+      "nextStep": "明早给自己留十分钟，开窗、倒水，只认真做完一件小事。",
+      "references": [
+        {
+          "title": "《持水壶的年轻女子》",
+          "by": "约翰内斯·维米尔 · 约1662年"
+        }
+      ],
+      "sources": [
+        {
+          "title": "大都会艺术博物馆 · 作品资料",
+          "url": "https://www.metmuseum.org/art/collection/search/437881"
+        }
+      ],
+      "designTarget": {
+        "light": 80,
+        "rhythm": 10,
+        "detail": 90,
+        "order": 90,
+        "company": 15,
+        "expression": 20
+      },
+      "image": {
+        "src": "assets/art/water-pitcher.jpg",
+        "alt": "一位戴白色头巾的女子站在窗边，一手扶着窗扇，另一手扶着桌上的水壶，墙上挂着地图。",
+        "credit": "约翰内斯·维米尔 · 约1662年 · 大都会艺术博物馆",
+        "license": "CC0 / Public Domain",
+        "sourceUrl": "https://www.metmuseum.org/art/collection/search/437881"
+      },
+      "titleOriginal": "Young Woman with a Water Pitcher",
+      "originalImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP353257.jpg",
+      "metadataUrl": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437881",
+      "licenseVerification": {
+        "officialPagePublicDomain": true,
+        "apiPublicDomain": true,
+        "downloadLinkObserved": true
+      },
+      "referenceAnswers": {
+        "P01": "P01_o4",
+        "P02": [
+          "P02_o1",
+          "P02_o2"
+        ],
+        "P03": "P03_o4",
+        "P04": "P04_o4",
+        "P05": [
+          "P05_o1",
+          "P05_o4"
+        ],
+        "P06": "P06_o1",
+        "P07": "P07_o4",
+        "P08": "P08_o1",
+        "P09": "P09_o4",
+        "P10": "P10_o4",
+        "P11": "P11_o1",
+        "P12": "P12_o1",
+        "P13": "P13_o3",
+        "P14": "P14_o2",
+        "P15": "P15_o4",
+        "P16": "P16_o4",
+        "P17": "P17_o1",
+        "P18": "P18_o1",
+        "P19": "P19_o2",
+        "P20": "P20_o1",
+        "P21": "P21_o4",
+        "P22": "P22_o3",
+        "P23": "P23_o1",
+        "P24": "P24_o3"
+      },
+      "designTargetNote": "本项目依据作品氛围原创设定的设计目标，不是作者、导演或画家的心理数据；展示参考轮廓由同一套题目的实际可选答卷计算。"
+    },
+    {
+      "id": "penitent_magdalen",
+      "name": "《忏悔的抹大拉》",
+      "style": "乔治·德·拉·图尔",
+      "title": "灯留一盏，心事慢慢想",
+      "summary": "夜色里只留下一小簇烛光，镜子、桌面和人物轮廓从暗处显出来。你可能更喜欢先独自待一会儿，让刚刚发生的事情慢慢落定，再决定要不要说、怎么说。这种安静不必急着被填满：把灯调暗，坐稳片刻，感受就有了不被催促的位置。",
+      "quote": "有些话，等心里安静下来再说。",
+      "keywords": [
+        "夜色",
+        "独处",
+        "收敛"
+      ],
+      "nextStep": "今晚给自己留一小段安静时间，写下一个还不急着回答的问题。",
+      "references": [
+        {
+          "title": "《忏悔的抹大拉》",
+          "by": "乔治·德·拉·图尔 · 约1640年"
+        }
+      ],
+      "sources": [
+        {
+          "title": "大都会艺术博物馆 · 作品资料",
+          "url": "https://www.metmuseum.org/art/collection/search/436839"
+        }
+      ],
+      "designTarget": {
+        "light": 10,
+        "rhythm": 5,
+        "detail": 55,
+        "order": 65,
+        "company": 0,
+        "expression": 15
+      },
+      "image": {
+        "src": "assets/art/penitent-magdalen.jpg",
+        "alt": "深色背景中，一位女子坐在烛光与镜子旁，手放在腿上的头骨上，烛火照亮她的脸和手臂。",
+        "credit": "乔治·德·拉·图尔 · 约1640年 · 大都会艺术博物馆",
+        "license": "CC0 / Public Domain",
+        "sourceUrl": "https://www.metmuseum.org/art/collection/search/436839"
+      },
+      "titleOriginal": "The Penitent Magdalen",
+      "metadataUrl": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436839",
+      "licenseVerification": {
+        "officialPagePublicDomain": true,
+        "apiPublicDomain": null,
+        "downloadLinkObserved": true
+      },
+      "researchNote": "官方藏品页明确 Public Domain/Download Image。公开元数据 API 在本次 web 读取中返回不可访问，因此没有把 API 公版标记伪记为 true。downloadUrl 是藏品页主图链接。原作宗教题材不用于推断答题者的宗教信仰或心理状况。",
+      "referenceAnswers": {
+        "P01": [
+          "P01_o1",
+          "P01_o2"
+        ],
+        "P02": "P02_o1",
+        "P03": [
+          "P03_o1",
+          "P03_o4"
+        ],
+        "P04": [
+          "P04_o3",
+          "P04_o4"
+        ],
+        "P05": "P05_o1",
+        "P06": "P06_o1",
+        "P07": "P07_o1",
+        "P08": "P08_o1",
+        "P09": "P09_o3",
+        "P10": "P10_o2",
+        "P11": "P11_o1",
+        "P12": "P12_o1",
+        "P13": "P13_o2",
+        "P14": "P14_o1",
+        "P15": "P15_o2",
+        "P16": "P16_o4",
+        "P17": "P17_o1",
+        "P18": "P18_o1",
+        "P19": "P19_o1",
+        "P20": "P20_o2",
+        "P21": "P21_o4",
+        "P22": "P22_o2",
+        "P23": "P23_o1",
+        "P24": "P24_o4"
+      },
+      "designTargetNote": "本项目依据作品氛围原创设定的设计目标，不是作者、导演或画家的心理数据；展示参考轮廓由同一套题目的实际可选答卷计算。"
+    },
+    {
+      "id": "moonwatchers",
+      "name": "《两人观月》",
+      "style": "卡斯帕·大卫·弗里德里希",
+      "title": "有人并肩，沉默也很合适",
+      "summary": "两个人在林间小路上停下来，一起看远处的月亮。画面没有把陪伴画成一场热闹的谈话，树枝和天空已经替他们留出了共同看的东西。你喜欢的关系，可能也有这样一段不用找话的时间：各自安静，又知道身边有人，脚步慢下来也不怕掉队。",
+      "quote": "一起看一会儿，不说话也很好。",
+      "keywords": [
+        "并肩",
+        "暮色",
+        "默契"
+      ],
+      "nextStep": "约一个相处舒服的人走一段路，不赶着聊完什么，一起看看天。",
+      "references": [
+        {
+          "title": "《两人观月》",
+          "by": "卡斯帕·大卫·弗里德里希 · 约1825—1830年"
+        }
+      ],
+      "sources": [
+        {
+          "title": "大都会艺术博物馆 · 作品资料",
+          "url": "https://www.metmuseum.org/art/collection/search/438417"
+        }
+      ],
+      "designTarget": {
+        "light": 15,
+        "rhythm": 15,
+        "detail": 25,
+        "order": 35,
+        "company": 55,
+        "expression": 20
+      },
+      "image": {
+        "src": "assets/art/moonwatchers.jpg",
+        "alt": "两名背对观众的男子站在树木与岩石之间，望向暮色天空里低低的月亮，弯曲树枝横过画面。",
+        "credit": "卡斯帕·大卫·弗里德里希 · 约1825—1830年 · 大都会艺术博物馆",
+        "license": "CC0 / Public Domain",
+        "sourceUrl": "https://www.metmuseum.org/art/collection/search/438417"
+      },
+      "titleOriginal": "Two Men Contemplating the Moon",
+      "originalImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP-31997-001-NEW.jpg",
+      "metadataUrl": "https://collectionapi.metmuseum.org/public/collection/v1/objects/438417",
+      "licenseVerification": {
+        "officialPagePublicDomain": true,
+        "apiPublicDomain": true,
+        "downloadLinkObserved": true
+      },
+      "researchNote": "使用的是 Met 约1825—1830年的版本，不是德累斯顿1819年的同构图版本。",
+      "referenceAnswers": {
+        "P01": "P01_o1",
+        "P02": "P02_o1",
+        "P03": "P03_o1",
+        "P04": [
+          "P04_o1",
+          "P04_o2"
+        ],
+        "P05": "P05_o3",
+        "P06": "P06_o1",
+        "P07": "P07_o2",
+        "P08": "P08_o1",
+        "P09": "P09_o3",
+        "P10": "P10_o2",
+        "P11": "P11_o3",
+        "P12": "P12_o1",
+        "P13": "P13_o2",
+        "P14": "P14_o1",
+        "P15": "P15_o1",
+        "P16": [
+          "P16_o3",
+          "P16_o4"
+        ],
+        "P17": [
+          "P17_o1",
+          "P17_o4"
+        ],
+        "P18": "P18_o1",
+        "P19": "P19_o1",
+        "P20": "P20_o3",
+        "P21": "P21_o3",
+        "P22": "P22_o2",
+        "P23": "P23_o2",
+        "P24": "P24_o4"
+      },
+      "designTargetNote": "本项目依据作品氛围原创设定的设计目标，不是作者、导演或画家的心理数据；展示参考轮廓由同一套题目的实际可选答卷计算。"
+    },
+    {
+      "id": "madame_x",
+      "name": "《X夫人》",
+      "style": "约翰·辛格·萨金特",
+      "title": "按自己的意思，站在画面里",
+      "summary": "深色裙装和背景让姿态本身成为主角，侧过的脸、撑在桌边的手都很清楚。你未必总想站在人群中央，却可能很在意如何按自己的意思出现：穿什么、说到哪里、哪些决定不再解释。画面里的存在感，也像把一个经过考虑的选择稳稳站住。",
+      "quote": "站稳自己的位置，也是一种表达。",
+      "keywords": [
+        "边界",
+        "姿态",
+        "存在感"
+      ],
+      "nextStep": "挑一件你喜欢却一直没穿出门的衣服，给它安排一次普通的出场。",
+      "references": [
+        {
+          "title": "《X夫人》",
+          "by": "约翰·辛格·萨金特 · 1883—1884年"
+        }
+      ],
+      "sources": [
+        {
+          "title": "大都会艺术博物馆 · 作品资料",
+          "url": "https://www.metmuseum.org/art/collection/search/12127"
+        }
+      ],
+      "designTarget": {
+        "light": 25,
+        "rhythm": 35,
+        "detail": 65,
+        "order": 80,
+        "company": 30,
+        "expression": 85
+      },
+      "image": {
+        "src": "assets/art/madame-x.jpg",
+        "alt": "一位身穿黑色长裙的女子侧着脸站在深褐背景前，右手轻扶圆桌，明亮皮肤与黑裙形成鲜明对比。",
+        "credit": "约翰·辛格·萨金特 · 1883—1884年 · 大都会艺术博物馆",
+        "license": "CC0 / Public Domain",
+        "sourceUrl": "https://www.metmuseum.org/art/collection/search/12127"
+      },
+      "titleOriginal": "Madame X (Virginie Amélie Avegno Gautreau)",
+      "originalImageUrl": "https://images.metmuseum.org/CRDImages/ad/original/DP-29006-001.jpg",
+      "metadataUrl": "https://collectionapi.metmuseum.org/public/collection/v1/objects/12127",
+      "licenseVerification": {
+        "officialPagePublicDomain": true,
+        "apiPublicDomain": true,
+        "downloadLinkObserved": true
+      },
+      "referenceAnswers": {
+        "P01": "P01_o1",
+        "P02": "P02_o1",
+        "P03": "P03_o4",
+        "P04": "P04_o4",
+        "P05": "P05_o4",
+        "P06": "P06_o4",
+        "P07": "P07_o1",
+        "P08": "P08_o1",
+        "P09": "P09_o4",
+        "P10": "P10_o4",
+        "P11": "P11_o1",
+        "P12": "P12_o4",
+        "P13": [
+          "P13_o3",
+          "P13_o4"
+        ],
+        "P14": [
+          "P14_o2",
+          "P14_o3"
+        ],
+        "P15": [
+          "P15_o1",
+          "P15_o2"
+        ],
+        "P16": "P16_o4",
+        "P17": "P17_o1",
+        "P18": "P18_o4",
+        "P19": "P19_o1",
+        "P20": "P20_o4",
+        "P21": "P21_o3",
+        "P22": "P22_o2",
+        "P23": "P23_o1",
+        "P24": "P24_o4"
+      },
+      "designTargetNote": "本项目依据作品氛围原创设定的设计目标，不是作者、导演或画家的心理数据；展示参考轮廓由同一套题目的实际可选答卷计算。"
+    },
+    {
+      "id": "harvesters",
+      "name": "《收割者》",
+      "style": "老彼得·勃鲁盖尔",
+      "title": "一起做事，也一起坐下来吃饭",
+      "summary": "金黄的田野里，有人继续收割，有人已经坐在树荫下吃饭。目光再往远处走，还能找到道路、村庄和更多各忙各的身影。你喜欢的热闹，可能就是这种有事可做、也有地方歇脚的来往：不必时时成为主角，和身边的人一起把一天过踏实就很满足。",
+      "quote": "忙完这一阵，饭就在树荫下。",
+      "keywords": [
+        "共同生活",
+        "踏实",
+        "烟火"
+      ],
+      "nextStep": "和熟悉的人一起做一顿饭，分着做事，最后认真坐下来吃。",
+      "references": [
+        {
+          "title": "《收割者》",
+          "by": "老彼得·勃鲁盖尔 · 1565年"
+        }
+      ],
+      "sources": [
+        {
+          "title": "大都会艺术博物馆 · 作品资料",
+          "url": "https://www.metmuseum.org/art/collection/search/435809"
+        }
+      ],
+      "designTarget": {
+        "light": 85,
+        "rhythm": 50,
+        "detail": 90,
+        "order": 45,
+        "company": 95,
+        "expression": 40
+      },
+      "image": {
+        "src": "assets/art/harvesters.jpg",
+        "alt": "夏日金黄色田野中，农人收割、搬运和行走，前景树荫下的一群人正在吃饭休息，村庄延伸到远处。",
+        "credit": "老彼得·勃鲁盖尔 · 1565年 · 大都会艺术博物馆",
+        "license": "CC0 / Public Domain",
+        "sourceUrl": "https://www.metmuseum.org/art/collection/search/435809"
+      },
+      "titleOriginal": "The Harvesters",
+      "originalImageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP119115.jpg",
+      "metadataUrl": "https://collectionapi.metmuseum.org/public/collection/v1/objects/435809",
+      "licenseVerification": {
+        "officialPagePublicDomain": true,
+        "apiPublicDomain": true,
+        "downloadLinkObserved": true
+      },
+      "referenceAnswers": {
+        "P01": "P01_o4",
+        "P02": "P02_o1",
+        "P03": "P03_o4",
+        "P04": [
+          "P04_o3",
+          "P04_o4"
+        ],
+        "P05": [
+          "P05_o3",
+          "P05_o4"
+        ],
+        "P06": [
+          "P06_o1",
+          "P06_o2"
+        ],
+        "P07": "P07_o4",
+        "P08": "P08_o1",
+        "P09": "P09_o4",
+        "P10": "P10_o1",
+        "P11": "P11_o4",
+        "P12": "P12_o1",
+        "P13": "P13_o4",
+        "P14": "P14_o4",
+        "P15": "P15_o4",
+        "P16": [
+          "P16_o1",
+          "P16_o4"
+        ],
+        "P17": "P17_o4",
+        "P18": "P18_o1",
+        "P19": "P19_o2",
+        "P20": "P20_o4",
+        "P21": "P21_o4",
+        "P22": "P22_o1",
+        "P23": "P23_o4",
+        "P24": "P24_o4"
+      },
+      "designTargetNote": "本项目依据作品氛围原创设定的设计目标，不是作者、导演或画家的心理数据；展示参考轮廓由同一套题目的实际可选答卷计算。"
+    },
+    {
+      "id": "mount_yu",
+      "name": "《虞山林壑图》",
+      "style": "倪瓒",
+      "title": "不把每一处空白，都急着填满",
+      "summary": "几株树、一岸坡地和远处的山，中间留出大片没有填满的空间。你喜欢的可能是这种有余地的生活：安排别排得太紧，关系留一点距离，没声音的时候也不急着找话。少一些颜色与装饰，反而更容易看见一件事原来的样子，让心里的次序慢慢清楚。",
+      "quote": "留一处空白，日子就能透一点气。",
+      "keywords": [
+        "留白",
+        "疏朗",
+        "自处"
+      ],
+      "nextStep": "把日程里一小段空白真正留出来，不拿另一件任务把它填上。",
+      "references": [
+        {
+          "title": "《虞山林壑图》",
+          "by": "倪瓒 · 1372年"
+        }
+      ],
+      "sources": [
+        {
+          "title": "大都会艺术博物馆 · 作品资料",
+          "url": "https://www.metmuseum.org/art/collection/search/45636"
+        }
+      ],
+      "designTarget": {
+        "light": 55,
+        "rhythm": 5,
+        "detail": 35,
+        "order": 55,
+        "company": 0,
+        "expression": 5
+      },
+      "image": {
+        "src": "assets/art/mount-yu.jpg",
+        "alt": "竖幅水墨山水中，近岸疏树与远山之间留出宽阔水面和空白，纸上题有诗文与印章。",
+        "credit": "倪瓒 · 1372年 · 大都会艺术博物馆",
+        "license": "CC0 / Public Domain",
+        "sourceUrl": "https://www.metmuseum.org/art/collection/search/45636"
+      },
+      "titleOriginal": "Woods and Valleys of Mount Yu",
+      "metadataUrl": "https://collectionapi.metmuseum.org/public/collection/v1/objects/45636",
+      "licenseVerification": {
+        "officialPagePublicDomain": true,
+        "apiPublicDomain": null,
+        "downloadLinkObserved": true
+      },
+      "researchNote": "馆方原文题名为‘元 倪瓚 虞山林壑圖 軸’；中文结果使用简体。官方藏品页明确 Public Domain/Download Image，API本次不可访问。",
+      "referenceAnswers": {
+        "P01": "P01_o4",
+        "P02": "P02_o1",
+        "P03": "P03_o2",
+        "P04": "P04_o3",
+        "P05": "P05_o1",
+        "P06": "P06_o1",
+        "P07": "P07_o4",
+        "P08": "P08_o1",
+        "P09": "P09_o2",
+        "P10": "P10_o2",
+        "P11": "P11_o1",
+        "P12": "P12_o1",
+        "P13": [
+          "P13_o1",
+          "P13_o2"
+        ],
+        "P14": "P14_o1",
+        "P15": "P15_o1",
+        "P16": [
+          "P16_o3",
+          "P16_o4"
+        ],
+        "P17": "P17_o1",
+        "P18": "P18_o1",
+        "P19": "P19_o1",
+        "P20": "P20_o2",
+        "P21": "P21_o4",
+        "P22": "P22_o2",
+        "P23": "P23_o1",
+        "P24": "P24_o1"
+      },
+      "designTargetNote": "本项目依据作品氛围原创设定的设计目标，不是作者、导演或画家的心理数据；展示参考轮廓由同一套题目的实际可选答卷计算。"
+    },
+    {
+      "id": "melencolia",
+      "name": "《忧郁Ⅰ》",
+      "style": "阿尔布雷希特·丢勒",
+      "title": "沿着细节，把一个问题想下去",
+      "summary": "画面里放着工具、几何形体和数字，每个角落都像有一条还没理清的线索。你可能喜欢带着问题慢慢看，不太满足于只扫一眼就下结论。把复杂的东西拆开，再重新排好，会比立刻热闹起来更让你投入；允许自己停在思考里，也是一种节奏。",
+      "quote": "暂时没有答案，也可以先把线索留下。",
+      "keywords": [
+        "思索",
+        "几何",
+        "细节"
+      ],
+      "nextStep": "拿出纸笔，把一件缠在一起的小事画成几个框，先连清它们的关系。",
+      "references": [
+        {
+          "title": "《忧郁Ⅰ》",
+          "by": "阿尔布雷希特·丢勒 · 1514年"
+        }
+      ],
+      "sources": [
+        {
+          "title": "大都会艺术博物馆 · 作品资料",
+          "url": "https://www.metmuseum.org/art/collection/search/336228"
+        }
+      ],
+      "designTarget": {
+        "light": 30,
+        "rhythm": 5,
+        "detail": 100,
+        "order": 100,
+        "company": 15,
+        "expression": 25
+      },
+      "image": {
+        "src": "assets/art/melencolia.jpg",
+        "alt": "黑白铜版画中，一位有翼人物托腮坐在测量工具与几何体之间，身旁还有数字方阵、沙漏与梯子。",
+        "credit": "阿尔布雷希特·丢勒 · 1514年 · 大都会艺术博物馆",
+        "license": "CC0 / Public Domain",
+        "sourceUrl": "https://www.metmuseum.org/art/collection/search/336228"
+      },
+      "titleOriginal": "Melencolia I",
+      "metadataUrl": "https://collectionapi.metmuseum.org/public/collection/v1/objects/336228",
+      "licenseVerification": {
+        "officialPagePublicDomain": true,
+        "apiPublicDomain": null,
+        "downloadLinkObserved": true
+      },
+      "researchNote": "原作是铜版画；‘画作’在产品中包含版画。结果借用精密线条、几何工具与思考停顿的视觉氛围，不能把作品名用于诊断抑郁症。官方藏品页明确 Public Domain/Download Image；API本次不可访问，图像读取曾 cache miss，主代理下载时需确认响应为图像。",
+      "referenceAnswers": {
+        "P01": [
+          "P01_o2",
+          "P01_o3"
+        ],
+        "P02": "P02_o1",
+        "P03": "P03_o4",
+        "P04": "P04_o4",
+        "P05": [
+          "P05_o1",
+          "P05_o2"
+        ],
+        "P06": "P06_o3",
+        "P07": "P07_o2",
+        "P08": "P08_o1",
+        "P09": "P09_o4",
+        "P10": "P10_o4",
+        "P11": "P11_o1",
+        "P12": "P12_o1",
+        "P13": "P13_o2",
+        "P14": "P14_o2",
+        "P15": "P15_o4",
+        "P16": "P16_o4",
+        "P17": [
+          "P17_o1",
+          "P17_o3"
+        ],
+        "P18": [
+          "P18_o1",
+          "P18_o3"
+        ],
+        "P19": "P19_o1",
+        "P20": "P20_o1",
+        "P21": "P21_o4",
+        "P22": "P22_o4",
+        "P23": "P23_o1",
+        "P24": "P24_o1"
+      },
+      "designTargetNote": "本项目依据作品氛围原创设定的设计目标，不是作者、导演或画家的心理数据；展示参考轮廓由同一套题目的实际可选答卷计算。"
+    },
+    {
+      "id": "jane_avril",
+      "name": "《简·阿薇尔》",
+      "style": "亨利·德·图卢兹－罗特列克",
+      "title": "让喜欢，先跳出一个动作来",
+      "summary": "舞者扬起的裙摆、弯曲的轮廓和大块颜色，让一张静止的海报也像带着拍子。你可能更容易被有动作、有声音、敢占一点空间的场面点燃。比起把情绪藏得很周全，你愿意让喜欢与兴奋有一个看得见的出口，今天就先把这一拍跳出来。",
+      "quote": "音乐一响，先让脚步替自己回答。",
+      "keywords": [
+        "节拍",
+        "鲜明",
+        "尽兴"
+      ],
+      "nextStep": "放一首最近喜欢的歌，跟着它动几分钟，不必跳得像谁。",
+      "references": [
+        {
+          "title": "《简·阿薇尔》",
+          "by": "亨利·德·图卢兹－罗特列克 · 1893年"
+        }
+      ],
+      "sources": [
+        {
+          "title": "大都会艺术博物馆 · 作品资料",
+          "url": "https://www.metmuseum.org/art/collection/search/333993"
+        }
+      ],
+      "designTarget": {
+        "light": 55,
+        "rhythm": 95,
+        "detail": 20,
+        "order": 25,
+        "company": 75,
+        "expression": 100
+      },
+      "image": {
+        "src": "assets/art/jane-avril.jpg",
+        "alt": "彩色演出海报上，简·阿薇尔身穿橙黑色舞裙扬起一条腿，弯曲线条和前景低音提琴连接成强烈的节奏。",
+        "credit": "亨利·德·图卢兹－罗特列克 · 1893年 · 大都会艺术博物馆",
+        "license": "CC0 / Public Domain",
+        "sourceUrl": "https://www.metmuseum.org/art/collection/search/333993"
+      },
+      "titleOriginal": "Jane Avril",
+      "metadataUrl": "https://collectionapi.metmuseum.org/public/collection/v1/objects/333993",
+      "licenseVerification": {
+        "officialPagePublicDomain": true,
+        "apiPublicDomain": null,
+        "downloadLinkObserved": true
+      },
+      "researchNote": "中文题名是项目译名，保留 titleOriginal 以便核对；原作为彩色石版海报。官方藏品页明确 Public Domain/Download Image；图像链接本次 web 读取返回 Internal Error，主代理下载时应确认响应为图像。",
+      "referenceAnswers": {
+        "P01": [
+          "P01_o2",
+          "P01_o4"
+        ],
+        "P02": "P02_o4",
+        "P03": "P03_o1",
+        "P04": "P04_o2",
+        "P05": "P05_o4",
+        "P06": "P06_o4",
+        "P07": "P07_o2",
+        "P08": "P08_o4",
+        "P09": "P09_o2",
+        "P10": "P10_o2",
+        "P11": "P11_o4",
+        "P12": "P12_o4",
+        "P13": "P13_o4",
+        "P14": [
+          "P14_o3",
+          "P14_o4"
+        ],
+        "P15": "P15_o1",
+        "P16": "P16_o2",
+        "P17": [
+          "P17_o3",
+          "P17_o4"
+        ],
+        "P18": "P18_o4",
+        "P19": "P19_o1",
+        "P20": "P20_o4",
+        "P21": "P21_o3",
+        "P22": "P22_o2",
+        "P23": "P23_o1",
+        "P24": "P24_o4"
+      },
+      "designTargetNote": "本项目依据作品氛围原创设定的设计目标，不是作者、导演或画家的心理数据；展示参考轮廓由同一套题目的实际可选答卷计算。"
+    }
+  ],
+  "ui": {
+    "questionUnit": "片段",
+    "questionKicker": "日常生活 · 在画面里",
+    "singleHeading": "与你合拍的一幅画",
+    "jointHeading": "两幅画，都与你合拍",
+    "storyHeading": "把生活，读成一幅画",
+    "evidenceHeading": "这些回答，落在了画面里",
+    "nextHeading": "给日常留一小笔",
+    "resultNoun": "画作侧写档案",
+    "eyebrow": "绘画的另一种读法"
+  },
+  "measurementNote": "题目、配分和参考轮廓为原创娱乐设计，尚未经过心理测量验证。数字表示本次作答中的偏好，不是能力高低、概率或人口百分位。 作品图像为官方开放获取的公版资源，匹配的是本项目设定的画面气质，不是画家本人的人格。 多选题把所选选项的分数取平均后计入维度，每道题的总权重不因多选增加。"
+}

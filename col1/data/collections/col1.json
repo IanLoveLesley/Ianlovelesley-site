@@ -1,0 +1,12 @@
+{
+  "id": "col1",
+  "label": "COL.01",
+  "title": "自我画像",
+  "subtitle": "从电影、文学和绘画里，读一读日常里的你。",
+  "description": "三种文化视角，三份独立档案。可以分开作答，也可以慢慢集齐。",
+  "order": 1,
+  "purchaseUnit": "collection",
+  "currency": "CNY",
+  "priceMinor": null,
+  "access": {"mode": "open"}
+}

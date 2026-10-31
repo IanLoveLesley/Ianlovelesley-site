@@ -1,0 +1,2386 @@
+{
+  "schemaVersion": 1,
+  "revision": 2,
+  "collectionId": "col1",
+  "estimatedMinutes": 6,
+  "shuffleOptions": true,
+  "scoring": {
+    "strategy": "dimension-profile",
+    "shapeWeight": 0.7,
+    "levelWeight": 0.3,
+    "coResultGap": 1.8,
+    "balancedSpread": 8,
+    "distantDistance": 20
+  },
+  "id": "literary",
+  "kind": "literature",
+  "order": 2,
+  "slug": "literary",
+  "title": "你的文学故乡在哪里？",
+  "shortTitle": "文学故乡",
+  "subtitle": "找到一页，让你想留下来的地方。",
+  "description": "在熟悉的小店、窗外的风和想要的生活节奏里，找一处会让你想多待一会儿的文学故乡。不需要读过这些书，也能作答。",
+  "cover": {
+    "style": "book"
+  },
+  "axes": [
+    {
+      "id": "root",
+      "label": "安居取向",
+      "short": "安居",
+      "low": "边走边看",
+      "high": "安顿下来",
+      "matchWeight": 1,
+      "reading": {
+        "low": "住处更像一个起点。新的街区、短暂的停留和还没去过的地方，会让你保持兴致。",
+        "high": "你会在重复的路和小习惯里长出归属感。能一点点安顿自己的地方，比不断换新鲜更有吸引力。"
+      }
+    },
+    {
+      "id": "bond",
+      "label": "邻里距离",
+      "short": "相伴",
+      "low": "保留空间",
+      "high": "熟悉相伴",
+      "matchWeight": 1,
+      "reading": {
+        "low": "理想的邻里关系里，应该有不必解释的距离。熟悉可以慢慢来，独处也有自己的舒服。",
+        "high": "你会被熟悉的人情留住。记得口味的店主、能接上话的邻居，会让一个地方越来越像家。"
+      }
+    },
+    {
+      "id": "pace",
+      "label": "日子节奏",
+      "short": "节奏",
+      "low": "紧凑利落",
+      "high": "慢慢感受",
+      "matchWeight": 1,
+      "reading": {
+        "low": "你喜欢让时间有一个去处。事情利落做完、想去的地方都走到，会带来明确的满足感。",
+        "high": "你愿意为一顿饭、一条路和一段天色多留些时间。没有完成什么，也不等于这一天白过了。"
+      }
+    },
+    {
+      "id": "wonder",
+      "label": "奇想空间",
+      "short": "奇想",
+      "low": "贴着现实",
+      "high": "让想象发生",
+      "matchWeight": 1,
+      "reading": {
+        "low": "你先看物件和地方实际是什么、能做什么。一个真实的小细节，本身就可以让你感兴趣。",
+        "high": "你会顺着一个小东西想出更远的地方。故事不一定要发生，能在脑子里展开就已经很有趣。"
+      }
+    },
+    {
+      "id": "nature",
+      "label": "环境归属",
+      "short": "环境",
+      "low": "城市烟火",
+      "high": "山野自然",
+      "matchWeight": 1,
+      "reading": {
+        "low": "生活的声音会让你觉得贴近世界。小店、街角、路过的人，都是你想在窗外看见的日常。",
+        "high": "你更容易在树、水和开阔的天空下松下来。让车声远一点，自己的感觉往往就近一点。"
+      }
+    },
+    {
+      "id": "warmth",
+      "label": "情绪气候",
+      "short": "气候",
+      "low": "清冷留白",
+      "high": "明亮热烈",
+      "matchWeight": 1,
+      "reading": {
+        "low": "你想要的日子可以安静、清淡，留着一点不必填满的空白。舒服未必需要热闹来证明。",
+        "high": "你会主动给生活添一点光和温度。一束花、热饭或一桌说笑，都能让普通的一天变得值得记住。"
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "L01",
+      "prompt": "要在一个新地方住一个月，刚放下行李。下面哪些事，会让你更有兴致？",
+      "focus": "在新地方落脚",
+      "primaryAxis": "root",
+      "weights": {
+        "root": 1,
+        "wonder": 0.35
+      },
+      "options": [
+        {
+          "id": "L01_o1",
+          "text": "行李先不拆，出门走一条没查过的路，看今天会碰见什么。",
+          "scores": {
+            "root": -2,
+            "wonder": 2
+          }
+        },
+        {
+          "id": "L01_o2",
+          "text": "先弄清交通，想着周末还能从这里去哪些别的地方。",
+          "scores": {
+            "root": -1,
+            "wonder": -1
+          }
+        },
+        {
+          "id": "L01_o3",
+          "text": "找一家能常去的早餐店，记住明天出门怎么走。",
+          "scores": {
+            "root": 1,
+            "wonder": -1
+          }
+        },
+        {
+          "id": "L01_o4",
+          "text": "把床和桌子布置好，哪怕只住一个月，也想有自己的小窝。",
+          "scores": {
+            "root": 2,
+            "wonder": 0
+          }
+        }
+      ],
+      "selection": {
+        "mode": "multiple",
+        "maxSelections": 2
+      }
+    },
+    {
+      "id": "L02",
+      "prompt": "搬家后总在楼道碰到同一位邻居。什么样的相处，会让你觉得舒服？",
+      "focus": "慢慢认识邻居",
+      "primaryAxis": "bond",
+      "weights": {
+        "bond": 1,
+        "warmth": 0.35
+      },
+      "options": [
+        {
+          "id": "L02_o1",
+          "text": "不必记住彼此，礼貌点头就够，我回家想清静一点。",
+          "scores": {
+            "bond": -2,
+            "warmth": -1
+          }
+        },
+        {
+          "id": "L02_o2",
+          "text": "需要问快递或物业时能搭句话，平时各过各的。",
+          "scores": {
+            "bond": -1,
+            "warmth": 0
+          }
+        },
+        {
+          "id": "L02_o3",
+          "text": "见面能聊两句，偶尔知道对方最近在忙什么。",
+          "scores": {
+            "bond": 1,
+            "warmth": 1
+          }
+        },
+        {
+          "id": "L02_o4",
+          "text": "慢慢熟到能敲门借个东西，做多了的饭也愿意分一份。",
+          "scores": {
+            "bond": 2,
+            "warmth": 2
+          }
+        }
+      ],
+      "selection": {
+        "mode": "multiple",
+        "maxSelections": 2
+      }
+    },
+    {
+      "id": "L03",
+      "prompt": "难得一个不用出门的上午。哪些过法，会让你觉得很满足？",
+      "focus": "一个空着的上午",
+      "primaryAxis": "pace",
+      "weights": {
+        "pace": 1,
+        "root": 0.35
+      },
+      "options": [
+        {
+          "id": "L03_o1",
+          "text": "列出积着的小事，趁这半天一件件清掉。",
+          "scores": {
+            "pace": -2,
+            "root": 1
+          }
+        },
+        {
+          "id": "L03_o2",
+          "text": "赶紧做完手头的事，剩下时间说走就走。",
+          "scores": {
+            "pace": -1,
+            "root": -2
+          }
+        },
+        {
+          "id": "L03_o3",
+          "text": "做一顿慢早餐，吃完再决定接下来干什么。",
+          "scores": {
+            "pace": 1,
+            "root": 1
+          }
+        },
+        {
+          "id": "L03_o4",
+          "text": "在窗边坐到光线都换了位置，什么也没完成也不遗憾。",
+          "scores": {
+            "pace": 2,
+            "root": 0
+          }
+        }
+      ],
+      "selection": {
+        "mode": "multiple",
+        "maxSelections": 2
+      }
+    },
+    {
+      "id": "L04",
+      "prompt": "路过一栋旧楼，看见走廊尽头有扇平时没注意的小门。你可能会想些什么？",
+      "focus": "走廊尽头的小门",
+      "primaryAxis": "wonder",
+      "weights": {
+        "wonder": 1,
+        "pace": 0.35
+      },
+      "options": [
+        {
+          "id": "L04_o1",
+          "text": "多半是设备间，知道用途就没什么可惦记的。",
+          "scores": {
+            "wonder": -2,
+            "pace": -1
+          }
+        },
+        {
+          "id": "L04_o2",
+          "text": "找找旁边的标牌，好奇它在这栋楼里做什么用。",
+          "scores": {
+            "wonder": -1,
+            "pace": 0
+          }
+        },
+        {
+          "id": "L04_o3",
+          "text": "想象门后可能有个小院子，午后能坐在那里喝茶。",
+          "scores": {
+            "wonder": 1,
+            "pace": 2
+          }
+        },
+        {
+          "id": "L04_o4",
+          "text": "脑子里一下冒出另一条街、一家小店，像能走进另一个地方。",
+          "scores": {
+            "wonder": 2,
+            "pace": 0
+          }
+        }
+      ],
+      "selection": {
+        "mode": "multiple",
+        "maxSelections": 2
+      }
+    },
+    {
+      "id": "L05",
+      "prompt": "晚饭后出去走走，几条路都不远。哪些路线会让你想多走几次？",
+      "focus": "饭后的散步路线",
+      "primaryAxis": "nature",
+      "weights": {
+        "nature": 1,
+        "pace": 0.35
+      },
+      "options": [
+        {
+          "id": "L05_o1",
+          "text": "穿过夜市，看看新摊位，顺手买点吃的。",
+          "scores": {
+            "nature": -2,
+            "pace": -1
+          }
+        },
+        {
+          "id": "L05_o2",
+          "text": "沿居民楼和街角小公园走，离日常生活近一点。",
+          "scores": {
+            "nature": -1,
+            "pace": 0
+          }
+        },
+        {
+          "id": "L05_o3",
+          "text": "挑树密一点的路，走慢些，听树叶和脚下的声音。",
+          "scores": {
+            "nature": 1,
+            "pace": 1
+          }
+        },
+        {
+          "id": "L05_o4",
+          "text": "去河堤或草地，能待到天黑，离店铺和车流远一点。",
+          "scores": {
+            "nature": 2,
+            "pace": 2
+          }
+        }
+      ],
+      "selection": {
+        "mode": "multiple",
+        "maxSelections": 2
+      }
+    },
+    {
+      "id": "L06",
+      "prompt": "和朋友找地方待一下午，不考虑价格。哪些环境会让你愿意坐下来？",
+      "focus": "想坐一会儿的店",
+      "primaryAxis": "warmth",
+      "weights": {
+        "warmth": 1,
+        "bond": 0.35
+      },
+      "options": [
+        {
+          "id": "L06_o1",
+          "text": "偏暗的小店，各桌说话都很轻，彼此不用一直聊天。",
+          "scores": {
+            "warmth": -2,
+            "bond": -1
+          }
+        },
+        {
+          "id": "L06_o2",
+          "text": "干净简单的木桌，不用精心布置，安静喝完一杯就好。",
+          "scores": {
+            "warmth": -1,
+            "bond": -1
+          }
+        },
+        {
+          "id": "L06_o3",
+          "text": "晒得到太阳的小院，两个人边喝边慢慢聊。",
+          "scores": {
+            "warmth": 1,
+            "bond": 1
+          }
+        },
+        {
+          "id": "L06_o4",
+          "text": "暖灯下的大桌子，店主和熟客时不时过来接话。",
+          "scores": {
+            "warmth": 2,
+            "bond": 2
+          }
+        }
+      ],
+      "selection": {
+        "mode": "multiple",
+        "maxSelections": 2
+      }
+    },
+    {
+      "id": "L07",
+      "prompt": "朋友突然问你明天要不要去旁边的城市住两天，刚好不耽误其他事。你更像哪种反应？",
+      "focus": "临时多出来的小旅行",
+      "primaryAxis": "root",
+      "weights": {
+        "root": 1
+      },
+      "options": [
+        {
+          "id": "L07_o1",
+          "text": "挺想去，今晚简单收一下东西就能出发。",
+          "scores": {
+            "root": -1
+          }
+        },
+        {
+          "id": "L07_o2",
+          "text": "先看看路线和自己的精神，合适就去。",
+          "scores": {
+            "root": 0
+          }
+        },
+        {
+          "id": "L07_o3",
+          "text": "有点心动，不过更想在熟悉的地方过这个周末。",
+          "scores": {
+            "root": 1
+          }
+        },
+        {
+          "id": "L07_o4",
+          "text": "这次想留在自己的住处，把日子过舒服一点。",
+          "scores": {
+            "root": 2
+          }
+        }
+      ],
+      "selection": {
+        "mode": "single"
+      }
+    },
+    {
+      "id": "L08",
+      "prompt": "常去的早餐店老板已经记住了你的口味。你更接近哪种感觉？",
+      "focus": "早餐店里的熟悉感",
+      "primaryAxis": "bond",
+      "weights": {
+        "bond": 1
+      },
+      "options": [
+        {
+          "id": "L08_o1",
+          "text": "方便是方便，但想吃别的照样会换一家。",
+          "scores": {
+            "bond": -1
+          }
+        },
+        {
+          "id": "L08_o2",
+          "text": "被记住挺好，点完单笑一下就行。",
+          "scores": {
+            "bond": 0
+          }
+        },
+        {
+          "id": "L08_o3",
+          "text": "以后来买早餐，会多聊两句。",
+          "scores": {
+            "bond": 1
+          }
+        },
+        {
+          "id": "L08_o4",
+          "text": "慢慢成了早上的固定一站，偶尔不去还会惦记。",
+          "scores": {
+            "bond": 2
+          }
+        }
+      ],
+      "selection": {
+        "mode": "single"
+      }
+    },
+    {
+      "id": "L09",
+      "prompt": "朋友还有一个小时才到，你已经到了约定的街区。你更可能怎么等？",
+      "focus": "等人时空出的一小时",
+      "primaryAxis": "pace",
+      "weights": {
+        "pace": 1
+      },
+      "options": [
+        {
+          "id": "L09_o1",
+          "text": "看看附近有什么能顺手办完的小事。",
+          "scores": {
+            "pace": -1
+          }
+        },
+        {
+          "id": "L09_o2",
+          "text": "找个地方坐下，把手机里想看的东西看一看。",
+          "scores": {
+            "pace": 0
+          }
+        },
+        {
+          "id": "L09_o3",
+          "text": "点杯喝的，看看窗外的人来人往。",
+          "scores": {
+            "pace": 1
+          }
+        },
+        {
+          "id": "L09_o4",
+          "text": "沿着附近的小路慢慢走，没打算非得做成什么。",
+          "scores": {
+            "pace": 2
+          }
+        }
+      ],
+      "selection": {
+        "mode": "single"
+      }
+    },
+    {
+      "id": "L10",
+      "prompt": "朋友说起小时候住过的小城，只讲了几条街和一条河。你听着听着通常会？",
+      "focus": "听朋友说旧地方",
+      "primaryAxis": "wonder",
+      "weights": {
+        "wonder": 1
+      },
+      "options": [
+        {
+          "id": "L10_o1",
+          "text": "记住这些地方在哪里，听他接着讲。",
+          "scores": {
+            "wonder": -1
+          }
+        },
+        {
+          "id": "L10_o2",
+          "text": "脑子里大致有个街道和河的样子。",
+          "scores": {
+            "wonder": 0
+          }
+        },
+        {
+          "id": "L10_o3",
+          "text": "连天色、路边店铺的颜色也会跟着浮现。",
+          "scores": {
+            "wonder": 1
+          }
+        },
+        {
+          "id": "L10_o4",
+          "text": "会在脑子里逛起来，想路上会碰到什么人和事。",
+          "scores": {
+            "wonder": 2
+          }
+        }
+      ],
+      "selection": {
+        "mode": "single"
+      }
+    },
+    {
+      "id": "L11",
+      "prompt": "只有两天假，不用考虑花费和路程，你更想选哪种去处？",
+      "focus": "两天假想往哪里去",
+      "primaryAxis": "nature",
+      "weights": {
+        "nature": 1
+      },
+      "options": [
+        {
+          "id": "L11_o1",
+          "text": "城里逛展、探店，走累了就找地方吃饭。",
+          "scores": {
+            "nature": -1
+          }
+        },
+        {
+          "id": "L11_o2",
+          "text": "找个公园多的城区，方便又能散步。",
+          "scores": {
+            "nature": 0
+          }
+        },
+        {
+          "id": "L11_o3",
+          "text": "去城郊住一晚，白天走走山路或河堤。",
+          "scores": {
+            "nature": 1
+          }
+        },
+        {
+          "id": "L11_o4",
+          "text": "在山里或乡下住两天，早晚都能在外面待着。",
+          "scores": {
+            "nature": 2
+          }
+        }
+      ],
+      "selection": {
+        "mode": "single"
+      }
+    },
+    {
+      "id": "L12",
+      "prompt": "一个阴雨天，你准备在家待到晚上。你更可能把屋里弄成什么样？",
+      "focus": "阴雨天的房间",
+      "primaryAxis": "warmth",
+      "weights": {
+        "warmth": 1
+      },
+      "options": [
+        {
+          "id": "L12_o1",
+          "text": "留一盏够用的灯，安静一点就很好。",
+          "scores": {
+            "warmth": -1
+          }
+        },
+        {
+          "id": "L12_o2",
+          "text": "和平时一样，手边用得上的东西都在。",
+          "scores": {
+            "warmth": 0
+          }
+        },
+        {
+          "id": "L12_o3",
+          "text": "多开一盏暖灯，再给自己弄点热的。",
+          "scores": {
+            "warmth": 1
+          }
+        },
+        {
+          "id": "L12_o4",
+          "text": "把屋里收拾亮堂，放点熟悉的音乐，准备顿好吃的。",
+          "scores": {
+            "warmth": 2
+          }
+        }
+      ],
+      "selection": {
+        "mode": "single"
+      }
+    },
+    {
+      "id": "L13",
+      "prompt": "在同一个地方住了半年，哪些念头你会经常有？",
+      "focus": "住久以后的念头",
+      "primaryAxis": "root",
+      "weights": {
+        "root": 1,
+        "nature": 0.35
+      },
+      "options": [
+        {
+          "id": "L13_o1",
+          "text": "这片街区已经走熟了，下次想搬到完全不同的城区试试。",
+          "scores": {
+            "root": -2,
+            "nature": -1
+          }
+        },
+        {
+          "id": "L13_o2",
+          "text": "住处可以不换，但周末总想出城，去没去过的地方。",
+          "scores": {
+            "root": -1,
+            "nature": 2
+          }
+        },
+        {
+          "id": "L13_o3",
+          "text": "喜欢几条固定的路，走到哪儿买什么都心里有数。",
+          "scores": {
+            "root": 1,
+            "nature": -1
+          }
+        },
+        {
+          "id": "L13_o4",
+          "text": "想在阳台种点东西，慢慢把这里养成不舍得搬的家。",
+          "scores": {
+            "root": 2,
+            "nature": 1
+          }
+        }
+      ],
+      "selection": {
+        "mode": "multiple",
+        "maxSelections": 2
+      }
+    },
+    {
+      "id": "L14",
+      "prompt": "被朋友带到他常去的小店。下面哪些时刻，会让你想下次再来？",
+      "focus": "小店里让人舒服的时刻",
+      "primaryAxis": "bond",
+      "weights": {
+        "bond": 1,
+        "warmth": 0.35
+      },
+      "options": [
+        {
+          "id": "L14_o1",
+          "text": "服务刚刚好，不被认出来也不被打扰。",
+          "scores": {
+            "bond": -2,
+            "warmth": -1
+          }
+        },
+        {
+          "id": "L14_o2",
+          "text": "店主知道我常点什么，招呼一句就去忙自己的。",
+          "scores": {
+            "bond": 0,
+            "warmth": 0
+          }
+        },
+        {
+          "id": "L14_o3",
+          "text": "上次的话题还有人记得，坐下来就能接着聊。",
+          "scores": {
+            "bond": 1,
+            "warmth": 1
+          }
+        },
+        {
+          "id": "L14_o4",
+          "text": "熟人陆续来，最后几张桌子拼在一起，不知不觉吃到很晚。",
+          "scores": {
+            "bond": 2,
+            "warmth": 2
+          }
+        }
+      ],
+      "selection": {
+        "mode": "multiple",
+        "maxSelections": 2
+      }
+    },
+    {
+      "id": "L15",
+      "prompt": "吃完饭出去散步，天还没黑。哪些安排是你会喜欢的？",
+      "focus": "天黑前的一段路",
+      "primaryAxis": "pace",
+      "weights": {
+        "pace": 1,
+        "nature": 0.35
+      },
+      "options": [
+        {
+          "id": "L15_o1",
+          "text": "把运动手表打开，按想好的路线和里程走完。",
+          "scores": {
+            "pace": -2,
+            "nature": 0
+          }
+        },
+        {
+          "id": "L15_o2",
+          "text": "顺路去便利店买东西，事情办好了就回。",
+          "scores": {
+            "pace": -1,
+            "nature": -2
+          }
+        },
+        {
+          "id": "L15_o3",
+          "text": "走到河边坐一会儿，看水面和树影，晚些回也行。",
+          "scores": {
+            "pace": 1,
+            "nature": 2
+          }
+        },
+        {
+          "id": "L15_o4",
+          "text": "沿小巷走走停停，看到有人摆摊、下棋，就站旁边看一阵。",
+          "scores": {
+            "pace": 2,
+            "nature": -1
+          }
+        }
+      ],
+      "selection": {
+        "mode": "multiple",
+        "maxSelections": 2
+      }
+    },
+    {
+      "id": "L16",
+      "prompt": "朋友发来一张云的照片，说像一只小狗。你可能怎么接？",
+      "focus": "一张像小狗的云",
+      "primaryAxis": "wonder",
+      "weights": {
+        "wonder": 1,
+        "warmth": 0.35
+      },
+      "options": [
+        {
+          "id": "L16_o1",
+          "text": "回一句‘像’，接着问正事，照片不会让我展开想。",
+          "scores": {
+            "wonder": -2,
+            "warmth": -1
+          }
+        },
+        {
+          "id": "L16_o2",
+          "text": "看一眼天气和远处的山，想知道他今天去了哪里。",
+          "scores": {
+            "wonder": -1,
+            "warmth": 0
+          }
+        },
+        {
+          "id": "L16_o3",
+          "text": "在图上圈出耳朵，开玩笑说它正盯着下面的烤肠摊。",
+          "scores": {
+            "wonder": 1,
+            "warmth": 2
+          }
+        },
+        {
+          "id": "L16_o4",
+          "text": "顺着编一段它从哪里跑来的故事，自己都越讲越投入。",
+          "scores": {
+            "wonder": 2,
+            "warmth": 1
+          }
+        }
+      ],
+      "selection": {
+        "mode": "multiple",
+        "maxSelections": 2
+      }
+    },
+    {
+      "id": "L17",
+      "prompt": "临时住几晚的房间，其他条件一样。哪些窗外景色会让你心动？",
+      "focus": "想在窗外看见什么",
+      "primaryAxis": "nature",
+      "weights": {
+        "nature": 1,
+        "warmth": 0.35
+      },
+      "options": [
+        {
+          "id": "L17_o1",
+          "text": "夜里的窄街，灯牌不多，能看见一个人从街口走过。",
+          "scores": {
+            "nature": -2,
+            "warmth": -2
+          }
+        },
+        {
+          "id": "L17_o2",
+          "text": "楼下是热闹早市，开窗能闻到早餐和听见招呼声。",
+          "scores": {
+            "nature": -1,
+            "warmth": 2
+          }
+        },
+        {
+          "id": "L17_o3",
+          "text": "隔着树能看见河，阴天的水面和屋里都很安静。",
+          "scores": {
+            "nature": 1,
+            "warmth": -1
+          }
+        },
+        {
+          "id": "L17_o4",
+          "text": "一大块田野和晴朗天空，早上阳光直接落进房间。",
+          "scores": {
+            "nature": 2,
+            "warmth": 2
+          }
+        }
+      ],
+      "selection": {
+        "mode": "multiple",
+        "maxSelections": 2
+      }
+    },
+    {
+      "id": "L18",
+      "prompt": "生日约三四个熟朋友，不用考虑预算。哪些过法你会真想选？",
+      "focus": "一顿小小的生日饭",
+      "primaryAxis": "warmth",
+      "weights": {
+        "warmth": 1,
+        "bond": 0.35
+      },
+      "options": [
+        {
+          "id": "L18_o1",
+          "text": "照常吃一顿饭，不唱歌、不许愿，聊得舒服就行。",
+          "scores": {
+            "warmth": -2,
+            "bond": 0
+          }
+        },
+        {
+          "id": "L18_o2",
+          "text": "留一点时间独处，晚上再和最亲近的那个人见面。",
+          "scores": {
+            "warmth": -1,
+            "bond": -2
+          }
+        },
+        {
+          "id": "L18_o3",
+          "text": "准备几个大家爱吃的菜和一束花，围在家里的桌边。",
+          "scores": {
+            "warmth": 1,
+            "bond": 1
+          }
+        },
+        {
+          "id": "L18_o4",
+          "text": "把屋子装饰起来，放歌、拍照，让大家陪我热热闹闹过一次。",
+          "scores": {
+            "warmth": 2,
+            "bond": 2
+          }
+        }
+      ],
+      "selection": {
+        "mode": "multiple",
+        "maxSelections": 2
+      }
+    },
+    {
+      "id": "L19",
+      "prompt": "确定要在一个地方待半年以上，下面哪件事会让你更期待？",
+      "focus": "接下来半年的期待",
+      "primaryAxis": "root",
+      "weights": {
+        "root": 1
+      },
+      "options": [
+        {
+          "id": "L19_o1",
+          "text": "可以以这里为起点，周末去看看别的地方。",
+          "scores": {
+            "root": -1
+          }
+        },
+        {
+          "id": "L19_o2",
+          "text": "还能发现不少没去过的小店和街道。",
+          "scores": {
+            "root": 0
+          }
+        },
+        {
+          "id": "L19_o3",
+          "text": "找到一条每天都想走一遍的路线。",
+          "scores": {
+            "root": 1
+          }
+        },
+        {
+          "id": "L19_o4",
+          "text": "一点点添置东西，养出属于自己的生活习惯。",
+          "scores": {
+            "root": 2
+          }
+        }
+      ],
+      "selection": {
+        "mode": "single"
+      }
+    },
+    {
+      "id": "L20",
+      "prompt": "和一个相处舒服的室友短住一阵，吃饭这件事你更希望？",
+      "focus": "一起住时的日常来往",
+      "primaryAxis": "bond",
+      "weights": {
+        "bond": 1
+      },
+      "options": [
+        {
+          "id": "L20_o1",
+          "text": "各自安排，想吃什么、几点吃都自在。",
+          "scores": {
+            "bond": -1
+          }
+        },
+        {
+          "id": "L20_o2",
+          "text": "偶尔碰上一起吃，不用刻意凑。",
+          "scores": {
+            "bond": 0
+          }
+        },
+        {
+          "id": "L20_o3",
+          "text": "有空时一起做顿饭，顺便讲讲今天的事。",
+          "scores": {
+            "bond": 1
+          }
+        },
+        {
+          "id": "L20_o4",
+          "text": "慢慢有些固定的小安排，比如周末轮流做一顿。",
+          "scores": {
+            "bond": 2
+          }
+        }
+      ],
+      "selection": {
+        "mode": "single"
+      }
+    },
+    {
+      "id": "L21",
+      "prompt": "和朋友约好吃饭，店里说还要等二十分钟才能入座。你更可能？",
+      "focus": "入座前的二十分钟",
+      "primaryAxis": "pace",
+      "weights": {
+        "pace": 1
+      },
+      "options": [
+        {
+          "id": "L21_o1",
+          "text": "先把菜单看好，坐下就能直接点。",
+          "scores": {
+            "pace": -1
+          }
+        },
+        {
+          "id": "L21_o2",
+          "text": "商量几个想吃的菜，聊聊接下来的安排。",
+          "scores": {
+            "pace": 0
+          }
+        },
+        {
+          "id": "L21_o3",
+          "text": "买点喝的，靠在旁边慢慢聊天。",
+          "scores": {
+            "pace": 1
+          }
+        },
+        {
+          "id": "L21_o4",
+          "text": "找个能坐的地方，看看街景，晚一点吃也不着急。",
+          "scores": {
+            "pace": 2
+          }
+        }
+      ],
+      "selection": {
+        "mode": "single"
+      }
+    },
+    {
+      "id": "L22",
+      "prompt": "逛旧货店时，看到一只不知道用来装什么的旧铁盒。你更容易注意？",
+      "focus": "旧货架上的铁盒",
+      "primaryAxis": "wonder",
+      "weights": {
+        "wonder": 1
+      },
+      "options": [
+        {
+          "id": "L22_o1",
+          "text": "大小和结实程度，现在还能拿它装什么。",
+          "scores": {
+            "wonder": -1
+          }
+        },
+        {
+          "id": "L22_o2",
+          "text": "它大概是什么时候、做什么用的。",
+          "scores": {
+            "wonder": 0
+          }
+        },
+        {
+          "id": "L22_o3",
+          "text": "以前的人可能把它放在哪里，装过什么。",
+          "scores": {
+            "wonder": 1
+          }
+        },
+        {
+          "id": "L22_o4",
+          "text": "会顺着它想出一段来历，连怎么转到这家店都想一想。",
+          "scores": {
+            "wonder": 2
+          }
+        }
+      ],
+      "selection": {
+        "mode": "single"
+      }
+    },
+    {
+      "id": "L23",
+      "prompt": "朋友拍了一圈新住处给你看。你更容易先问哪一句？",
+      "focus": "看朋友的新住处",
+      "primaryAxis": "nature",
+      "weights": {
+        "nature": 1
+      },
+      "options": [
+        {
+          "id": "L23_o1",
+          "text": "“楼下吃东西、买东西方便吗？”",
+          "scores": {
+            "nature": -1
+          }
+        },
+        {
+          "id": "L23_o2",
+          "text": "“附近有没有能走走的小公园？”",
+          "scores": {
+            "nature": 0
+          }
+        },
+        {
+          "id": "L23_o3",
+          "text": "“你窗外那片树能走过去吗？”",
+          "scores": {
+            "nature": 1
+          }
+        },
+        {
+          "id": "L23_o4",
+          "text": "“早上开窗是不是能听到鸟叫和风声？”",
+          "scores": {
+            "nature": 2
+          }
+        }
+      ],
+      "selection": {
+        "mode": "single"
+      }
+    },
+    {
+      "id": "L24",
+      "prompt": "下面哪种夜晚，更像你想反复拥有的那一种？",
+      "focus": "想留下来的夜晚",
+      "primaryAxis": "warmth",
+      "weights": {
+        "warmth": 1
+      },
+      "options": [
+        {
+          "id": "L24_o1",
+          "text": "屋里灯很轻，窗外有夜色，自己安安静静待着。",
+          "scores": {
+            "warmth": -1
+          }
+        },
+        {
+          "id": "L24_o2",
+          "text": "手边一杯茶，做点熟悉的事，时间正好够用。",
+          "scores": {
+            "warmth": 0
+          }
+        },
+        {
+          "id": "L24_o3",
+          "text": "和亲近的人吃完热饭，聊起今天的小事。",
+          "scores": {
+            "warmth": 1
+          }
+        },
+        {
+          "id": "L24_o4",
+          "text": "一张桌子坐了熟悉的人，灯亮着，话一直没停。",
+          "scores": {
+            "warmth": 2
+          }
+        }
+      ],
+      "selection": {
+        "mode": "single"
+      }
+    }
+  ],
+  "outcomes": [
+    {
+      "id": "chatong",
+      "name": "茶峒渡口",
+      "style": "朴素 · 人情 · 慢节奏",
+      "title": "把日子，过在熟悉的人情里。",
+      "summary": "溪水、渡船与山城构成贴近自然的日常，人与人的往来靠熟悉和信任慢慢维系。这里的温柔带着等待与遗憾，热闹的节俗也不冲淡安静的底色；它让朴素生活、细微情意与从容节奏显得格外珍贵。",
+      "quote": "有些地方，一声招呼就让人想再坐一会儿。",
+      "keywords": [
+        "朴素",
+        "人情",
+        "慢节奏"
+      ],
+      "nextStep": "下一次散步，走到一处有水的地方，听一会儿周围的声音。",
+      "references": [
+        {
+          "title": "《边城》",
+          "by": "沈从文"
+        }
+      ],
+      "sources": [
+        {
+          "title": "吉林大学出版社：《边城》",
+          "url": "https://press.jlu.edu.cn/info/1026/6367.htm"
+        },
+        {
+          "title": "格林文化：《邊城》图书页",
+          "url": "https://www.grimmpress.com.tw/product/1538/959"
+        }
+      ],
+      "referenceAnswers": {
+        "L01": "L01_o4",
+        "L02": "L02_o4",
+        "L03": "L03_o4",
+        "L04": "L04_o3",
+        "L05": "L05_o4",
+        "L06": [
+          "L06_o2",
+          "L06_o4"
+        ],
+        "L07": "L07_o4",
+        "L08": "L08_o4",
+        "L09": "L09_o4",
+        "L10": "L10_o1",
+        "L11": "L11_o4",
+        "L12": "L12_o4",
+        "L13": "L13_o4",
+        "L14": [
+          "L14_o2",
+          "L14_o3"
+        ],
+        "L15": "L15_o3",
+        "L16": "L16_o1",
+        "L17": "L17_o4",
+        "L18": [
+          "L18_o1",
+          "L18_o2"
+        ],
+        "L19": "L19_o2",
+        "L20": "L20_o4",
+        "L21": "L21_o4",
+        "L22": "L22_o2",
+        "L23": "L23_o2",
+        "L24": "L24_o4"
+      },
+      "designTarget": {
+        "root": 85,
+        "bond": 80,
+        "pace": 95,
+        "wonder": 30,
+        "nature": 85,
+        "warmth": 65
+      },
+      "scene": "茶峒的溪流、渡口与山城日常",
+      "designTargetNote": "本项目依据作品氛围原创设定的设计目标，不是作者、导演或画家的心理数据；展示参考轮廓由同一套题目的实际可选答卷计算。"
+    },
+    {
+      "id": "walden",
+      "name": "瓦尔登湖畔",
+      "style": "简朴 · 自主 · 观察",
+      "title": "给自己，留一点独处的余地。",
+      "summary": "湖畔木屋把生活缩到吃饭、劳作、阅读与观察四季，安静并不等于空白，而是给感官和思考腾出位置。这个世界珍惜简朴与自主，也保留来客和村镇的回声，适合想把注意力慢慢收回日常的人。",
+      "quote": "把时间还给自己，才听得见生活里的小声音。",
+      "keywords": [
+        "简朴",
+        "自主",
+        "观察"
+      ],
+      "nextStep": "留半小时给自己，不赶着完成什么，看看窗外或手边的一件东西。",
+      "references": [
+        {
+          "title": "《瓦尔登湖》",
+          "by": "亨利·戴维·梭罗"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Project Gutenberg：Walden 原文",
+          "url": "https://www.gutenberg.org/cache/epub/205/pg205-images.html"
+        }
+      ],
+      "referenceAnswers": {
+        "L01": "L01_o4",
+        "L02": "L02_o1",
+        "L03": "L03_o4",
+        "L04": "L04_o3",
+        "L05": "L05_o4",
+        "L06": [
+          "L06_o1",
+          "L06_o2"
+        ],
+        "L07": "L07_o4",
+        "L08": "L08_o1",
+        "L09": "L09_o4",
+        "L10": "L10_o1",
+        "L11": "L11_o4",
+        "L12": "L12_o1",
+        "L13": [
+          "L13_o2",
+          "L13_o4"
+        ],
+        "L14": "L14_o1",
+        "L15": "L15_o3",
+        "L16": "L16_o2",
+        "L17": "L17_o4",
+        "L18": [
+          "L18_o1",
+          "L18_o2"
+        ],
+        "L19": "L19_o1",
+        "L20": "L20_o4",
+        "L21": "L21_o4",
+        "L22": "L22_o2",
+        "L23": "L23_o4",
+        "L24": "L24_o4"
+      },
+      "designTarget": {
+        "root": 70,
+        "bond": 20,
+        "pace": 95,
+        "wonder": 35,
+        "nature": 100,
+        "warmth": 30
+      },
+      "scene": "瓦尔登湖畔木屋、树林与四季",
+      "designTargetNote": "本项目依据作品氛围原创设定的设计目标，不是作者、导演或画家的心理数据；展示参考轮廓由同一套题目的实际可选答卷计算。"
+    },
+    {
+      "id": "green_gables",
+      "name": "绿山墙小屋",
+      "style": "想象 · 归属 · 热情",
+      "title": "给寻常的一天，添一点想象。",
+      "summary": "绿山墙的乡间日常有家务、学校、邻里拜访，也有被想象重新点亮的树林与小路。这里的归属感在一次次相处中生长，明亮的热情伴着笨拙与失落，让普通生活既有安稳的根，也有伸向远方的枝叶。",
+      "quote": "一条普通的小路，也可以有一个只属于你的名字。",
+      "keywords": [
+        "想象",
+        "归属",
+        "热情"
+      ],
+      "nextStep": "拍下今天让你觉得明亮的一个小细节，给它起个喜欢的名字。",
+      "references": [
+        {
+          "title": "《绿山墙的安妮》",
+          "by": "露西·莫德·蒙哥马利"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Project Gutenberg：Anne of Green Gables 原文",
+          "url": "https://www.gutenberg.org/cache/epub/45/pg45-images.html"
+        }
+      ],
+      "referenceAnswers": {
+        "L01": [
+          "L01_o3",
+          "L01_o4"
+        ],
+        "L02": "L02_o4",
+        "L03": [
+          "L03_o3",
+          "L03_o4"
+        ],
+        "L04": "L04_o4",
+        "L05": "L05_o4",
+        "L06": "L06_o4",
+        "L07": "L07_o4",
+        "L08": "L08_o4",
+        "L09": "L09_o4",
+        "L10": "L10_o4",
+        "L11": "L11_o4",
+        "L12": "L12_o4",
+        "L13": "L13_o4",
+        "L14": "L14_o4",
+        "L15": [
+          "L15_o1",
+          "L15_o3"
+        ],
+        "L16": [
+          "L16_o3",
+          "L16_o4"
+        ],
+        "L17": "L17_o4",
+        "L18": "L18_o3",
+        "L19": "L19_o3",
+        "L20": "L20_o3",
+        "L21": "L21_o3",
+        "L22": "L22_o3",
+        "L23": "L23_o3",
+        "L24": "L24_o4"
+      },
+      "designTarget": {
+        "root": 90,
+        "bond": 90,
+        "pace": 70,
+        "wonder": 85,
+        "nature": 90,
+        "warmth": 95
+      },
+      "scene": "绿山墙农舍与阿冯利的乡间生活",
+      "designTargetNote": "本项目依据作品氛围原创设定的设计目标，不是作者、导演或画家的心理数据；展示参考轮廓由同一套题目的实际可选答卷计算。"
+    },
+    {
+      "id": "grand_view_garden",
+      "name": "大观园",
+      "style": "审美 · 含蓄 · 知音",
+      "title": "在来往和细节里，留住一份心意。",
+      "summary": "庭院、花木与诗会把日常织成细密的审美世界，一处景致、一句闲话都能牵出复杂心事。大观园的美并不隔绝人情的冷暖；它珍惜含蓄的表达、相互懂得的瞬间，也让繁华中的脆弱始终可感。",
+      "quote": "一间屋子里，装得下好几种心情。",
+      "keywords": [
+        "审美",
+        "含蓄",
+        "知音"
+      ],
+      "nextStep": "找一个亲近的人，喝点东西，聊聊最近不算大事却一直记着的小事。",
+      "references": [
+        {
+          "title": "《红楼梦》",
+          "by": "曹雪芹"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Project Gutenberg：《紅樓夢》原文",
+          "url": "https://www.gutenberg.org/cache/epub/24264/pg24264-images.html"
+        },
+        {
+          "title": "中国国家博物馆：“大观园图”与“红楼梦”",
+          "url": "https://www.chnmuseum.cn/yj/xscg/xslw/201812/t20181224_33279.shtml"
+        },
+        {
+          "title": "恭王府博物馆：《红楼梦》与恭王府",
+          "url": "https://www.pgm.org.cn/pgm/hlmygwf/zl_hlm.shtml"
+        }
+      ],
+      "referenceAnswers": {
+        "L01": [
+          "L01_o3",
+          "L01_o4"
+        ],
+        "L02": [
+          "L02_o3",
+          "L02_o4"
+        ],
+        "L03": [
+          "L03_o3",
+          "L03_o4"
+        ],
+        "L04": "L04_o3",
+        "L05": "L05_o4",
+        "L06": "L06_o1",
+        "L07": "L07_o4",
+        "L08": "L08_o4",
+        "L09": "L09_o4",
+        "L10": "L10_o4",
+        "L11": "L11_o4",
+        "L12": "L12_o4",
+        "L13": "L13_o4",
+        "L14": "L14_o3",
+        "L15": "L15_o3",
+        "L16": [
+          "L16_o2",
+          "L16_o4"
+        ],
+        "L17": [
+          "L17_o1",
+          "L17_o3"
+        ],
+        "L18": "L18_o2",
+        "L19": "L19_o3",
+        "L20": "L20_o4",
+        "L21": "L21_o3",
+        "L22": "L22_o2",
+        "L23": "L23_o1",
+        "L24": "L24_o4"
+      },
+      "designTarget": {
+        "root": 90,
+        "bond": 75,
+        "pace": 85,
+        "wonder": 65,
+        "nature": 65,
+        "warmth": 50
+      },
+      "scene": "大观园的庭院、花木与诗意交往",
+      "designTargetNote": "本项目依据作品氛围原创设定的设计目标，不是作者、导演或画家的心理数据；展示参考轮廓由同一套题目的实际可选答卷计算。"
+    },
+    {
+      "id": "longbourn",
+      "name": "朗伯恩乡间",
+      "style": "机锋 · 观察 · 分寸",
+      "title": "日子有自己的分寸，也有温度。",
+      "summary": "拜访、家宴与邻里谈话让乡间生活充满细小的社交波澜，轻巧的机锋背后藏着体面、误解与现实考量。朗伯恩的趣味在于慢慢看清人，而不是只凭第一眼；熟悉的秩序里，也容得下独立的判断。",
+      "quote": "熟悉的来往里，也可以慢慢说清自己的想法。",
+      "keywords": [
+        "机锋",
+        "观察",
+        "分寸"
+      ],
+      "nextStep": "和熟悉的人散一次步，说一件最近真正让你在意的小事。",
+      "references": [
+        {
+          "title": "《傲慢与偏见》",
+          "by": "简·奥斯汀"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Project Gutenberg：Pride and Prejudice 原文",
+          "url": "https://www.gutenberg.org/cache/epub/1342/pg1342-images.html"
+        }
+      ],
+      "referenceAnswers": {
+        "L01": "L01_o4",
+        "L02": [
+          "L02_o3",
+          "L02_o4"
+        ],
+        "L03": [
+          "L03_o3",
+          "L03_o4"
+        ],
+        "L04": "L04_o1",
+        "L05": [
+          "L05_o3",
+          "L05_o4"
+        ],
+        "L06": "L06_o1",
+        "L07": "L07_o4",
+        "L08": "L08_o4",
+        "L09": "L09_o4",
+        "L10": "L10_o1",
+        "L11": "L11_o2",
+        "L12": "L12_o4",
+        "L13": "L13_o4",
+        "L14": [
+          "L14_o3",
+          "L14_o4"
+        ],
+        "L15": "L15_o2",
+        "L16": [
+          "L16_o1",
+          "L16_o3"
+        ],
+        "L17": "L17_o3",
+        "L18": [
+          "L18_o3",
+          "L18_o4"
+        ],
+        "L19": "L19_o3",
+        "L20": "L20_o4",
+        "L21": "L21_o3",
+        "L22": "L22_o2",
+        "L23": "L23_o1",
+        "L24": "L24_o4"
+      },
+      "designTarget": {
+        "root": 90,
+        "bond": 85,
+        "pace": 65,
+        "wonder": 20,
+        "nature": 50,
+        "warmth": 65
+      },
+      "scene": "朗伯恩及邻里拜访中的乡间社交日常",
+      "designTargetNote": "本项目依据作品氛围原创设定的设计目标，不是作者、导演或画家的心理数据；展示参考轮廓由同一套题目的实际可选答卷计算。"
+    },
+    {
+      "id": "notre_dame_paris",
+      "name": "巴黎钟楼",
+      "style": "城市 · 历史 · 共振",
+      "title": "站在城市里，看见更多层次。",
+      "summary": "钟楼、广场与纵横街巷让这座巴黎充满历史的层次，人群的喧响与高处的寂静相互映照。城市的美、偏见与冲突同时存在，宏大的建筑包围着具体的悲欢，让强烈感受与对他人处境的关注并肩出现。",
+      "quote": "人群往前走，旧街道还留着自己的声音。",
+      "keywords": [
+        "城市",
+        "历史",
+        "共振"
+      ],
+      "nextStep": "重走一条熟悉的街，看看旧建筑和新招牌是怎样挨在一起的。",
+      "references": [
+        {
+          "title": "《巴黎圣母院》",
+          "by": "维克多·雨果"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Project Gutenberg：Notre-Dame de Paris 原文英译",
+          "url": "https://www.gutenberg.org/files/2610/2610-h/2610-h.htm"
+        }
+      ],
+      "referenceAnswers": {
+        "L01": [
+          "L01_o2",
+          "L01_o4"
+        ],
+        "L02": [
+          "L02_o1",
+          "L02_o2"
+        ],
+        "L03": "L03_o1",
+        "L04": [
+          "L04_o1",
+          "L04_o4"
+        ],
+        "L05": "L05_o1",
+        "L06": "L06_o1",
+        "L07": "L07_o1",
+        "L08": "L08_o1",
+        "L09": "L09_o1",
+        "L10": "L10_o3",
+        "L11": "L11_o1",
+        "L12": "L12_o1",
+        "L13": "L13_o1",
+        "L14": [
+          "L14_o3",
+          "L14_o4"
+        ],
+        "L15": "L15_o2",
+        "L16": [
+          "L16_o1",
+          "L16_o4"
+        ],
+        "L17": "L17_o1",
+        "L18": "L18_o3",
+        "L19": "L19_o1",
+        "L20": "L20_o4",
+        "L21": "L21_o4",
+        "L22": "L22_o3",
+        "L23": "L23_o2",
+        "L24": "L24_o4"
+      },
+      "designTarget": {
+        "root": 25,
+        "bond": 50,
+        "pace": 25,
+        "wonder": 55,
+        "nature": 5,
+        "warmth": 40
+      },
+      "scene": "《巴黎圣母院》中的十五世纪巴黎、钟楼与街巷",
+      "designTargetNote": "本项目依据作品氛围原创设定的设计目标，不是作者、导演或画家的心理数据；展示参考轮廓由同一套题目的实际可选答卷计算。"
+    },
+    {
+      "id": "baker_street",
+      "name": "贝克街",
+      "style": "线索 · 秩序 · 探索",
+      "title": "沿着一个小问题，继续看下去。",
+      "summary": "贝克街的起居室与伦敦街巷相连，舒适的室内日常随时可能被一件来访或一个疑点打断。这个世界的吸引力在于耐心观察，把零碎线索放回结构之中；熟悉的落脚处，也可以成为探索未知的起点。",
+      "quote": "有些细节，值得停下来再看一眼。",
+      "keywords": [
+        "线索",
+        "秩序",
+        "探索"
+      ],
+      "nextStep": "留意一件平常会略过的小东西，想一想它为什么出现在那里。",
+      "references": [
+        {
+          "title": "《血字的研究》",
+          "by": "阿瑟·柯南·道尔"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Project Gutenberg：A Study in Scarlet 原文",
+          "url": "https://www.gutenberg.org/files/244/244-h/244-h.htm"
+        }
+      ],
+      "referenceAnswers": {
+        "L01": "L01_o4",
+        "L02": [
+          "L02_o1",
+          "L02_o2"
+        ],
+        "L03": "L03_o1",
+        "L04": "L04_o1",
+        "L05": "L05_o1",
+        "L06": "L06_o1",
+        "L07": "L07_o4",
+        "L08": "L08_o1",
+        "L09": "L09_o3",
+        "L10": "L10_o1",
+        "L11": "L11_o1",
+        "L12": "L12_o1",
+        "L13": [
+          "L13_o1",
+          "L13_o3"
+        ],
+        "L14": [
+          "L14_o1",
+          "L14_o2"
+        ],
+        "L15": "L15_o2",
+        "L16": [
+          "L16_o1",
+          "L16_o4"
+        ],
+        "L17": "L17_o1",
+        "L18": [
+          "L18_o1",
+          "L18_o4"
+        ],
+        "L19": "L19_o1",
+        "L20": "L20_o4",
+        "L21": "L21_o2",
+        "L22": "L22_o3",
+        "L23": "L23_o2",
+        "L24": "L24_o4"
+      },
+      "designTarget": {
+        "root": 65,
+        "bond": 35,
+        "pace": 25,
+        "wonder": 30,
+        "nature": 5,
+        "warmth": 30
+      },
+      "scene": "贝克街221B起居室与伦敦街巷",
+      "designTargetNote": "本项目依据作品氛围原创设定的设计目标，不是作者、导演或画家的心理数据；展示参考轮廓由同一套题目的实际可选答卷计算。"
+    },
+    {
+      "id": "wonderland",
+      "name": "爱丽丝仙境",
+      "style": "好奇 · 奇想 · 变奏",
+      "title": "给生活，留一扇可以拐弯的门。",
+      "summary": "兔子洞之后，尺度、语言与日常规则都开始松动，茶桌和花园也会变得出人意料。仙境的趣味来自不断追问与重新理解，惊奇常伴着困惑；它给习惯之外留出空间，让好奇心带着脚步继续向前。",
+      "quote": "偶尔绕个弯，也能遇见让人喜欢的新东西。",
+      "keywords": [
+        "好奇",
+        "奇想",
+        "变奏"
+      ],
+      "nextStep": "给一朵云、一片叶子或一处小角落起个新名字，看看它会让你想到什么。",
+      "references": [
+        {
+          "title": "《爱丽丝梦游仙境》",
+          "by": "刘易斯·卡罗尔"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Project Gutenberg：Alice’s Adventures in Wonderland 原文",
+          "url": "https://www.gutenberg.org/cache/epub/11/pg11-images.html"
+        }
+      ],
+      "referenceAnswers": {
+        "L01": "L01_o1",
+        "L02": "L02_o1",
+        "L03": "L03_o1",
+        "L04": "L04_o4",
+        "L05": [
+          "L05_o2",
+          "L05_o4"
+        ],
+        "L06": "L06_o4",
+        "L07": "L07_o1",
+        "L08": "L08_o2",
+        "L09": "L09_o2",
+        "L10": "L10_o4",
+        "L11": "L11_o1",
+        "L12": "L12_o4",
+        "L13": [
+          "L13_o1",
+          "L13_o2"
+        ],
+        "L14": [
+          "L14_o1",
+          "L14_o2"
+        ],
+        "L15": "L15_o1",
+        "L16": "L16_o4",
+        "L17": [
+          "L17_o2",
+          "L17_o4"
+        ],
+        "L18": [
+          "L18_o2",
+          "L18_o4"
+        ],
+        "L19": "L19_o1",
+        "L20": "L20_o4",
+        "L21": "L21_o3",
+        "L22": "L22_o4",
+        "L23": "L23_o2",
+        "L24": "L24_o4"
+      },
+      "designTarget": {
+        "root": 10,
+        "bond": 40,
+        "pace": 25,
+        "wonder": 100,
+        "nature": 45,
+        "warmth": 80
+      },
+      "scene": "兔子洞之后的仙境、茶桌与花园",
+      "designTargetNote": "本项目依据作品氛围原创设定的设计目标，不是作者、导演或画家的心理数据；展示参考轮廓由同一套题目的实际可选答卷计算。"
+    },
+    {
+      "id": "peach_blossom",
+      "name": "桃花源",
+      "style": "安顿 · 山水 · 自有边界",
+      "title": "把日子安顿在山水之间。",
+      "summary": "穿过一道狭窄的山口，眼前是田地、池水和相连的屋舍。人们按四季耕作，也会给偶然来的客人摆一桌饭。这一页留给你的是安稳的日子：有人来往，生活有边界，外面的消息不必占满每一天。你可以在熟悉的地方，慢慢把日子过踏实。",
+      "quote": "门外有风声，屋里有等你坐下的一把椅子。",
+      "keywords": [
+        "安顿",
+        "边界",
+        "四季"
+      ],
+      "nextStep": "留一个不赶时间的下午，在熟悉的公园走走，再回家认真吃顿饭。",
+      "references": [
+        {
+          "title": "《桃花源记》",
+          "by": "陶渊明"
+        }
+      ],
+      "sources": [
+        {
+          "title": "维基文库：《桃花源记》原文",
+          "url": "https://zh.wikisource.org/zh-hans/%E6%A1%83%E8%8A%B1%E6%BA%90%E8%A8%98"
+        }
+      ],
+      "designTarget": {
+        "root": 95,
+        "bond": 60,
+        "pace": 95,
+        "wonder": 75,
+        "nature": 100,
+        "warmth": 65
+      },
+      "scene": "《桃花源记》中山口之后的田地、村落与四季生活",
+      "designTargetNote": "本项目依据作品氛围原创设定的设计目标，不是作者、导演或画家的心理数据；展示参考轮廓由同一套题目的实际可选答卷计算。",
+      "referenceAnswers": {
+        "L01": [
+          "L01_o3",
+          "L01_o4"
+        ],
+        "L02": [
+          "L02_o1",
+          "L02_o2"
+        ],
+        "L03": "L03_o4",
+        "L04": "L04_o3",
+        "L05": "L05_o4",
+        "L06": "L06_o1",
+        "L07": "L07_o4",
+        "L08": "L08_o3",
+        "L09": "L09_o4",
+        "L10": "L10_o4",
+        "L11": "L11_o4",
+        "L12": "L12_o4",
+        "L13": "L13_o4",
+        "L14": [
+          "L14_o3",
+          "L14_o4"
+        ],
+        "L15": "L15_o3",
+        "L16": "L16_o4",
+        "L17": "L17_o4",
+        "L18": "L18_o3",
+        "L19": "L19_o4",
+        "L20": "L20_o4",
+        "L21": "L21_o4",
+        "L22": "L22_o2",
+        "L23": "L23_o4",
+        "L24": "L24_o4"
+      }
+    },
+    {
+      "id": "emerald_city",
+      "name": "翡翠城",
+      "style": "奇想 · 街巷 · 明亮日常",
+      "title": "安顿下来，也继续遇见新鲜事。",
+      "summary": "街边的店铺、城门和宫殿像被同一种绿色照亮，连普通的柠檬水都添了一点奇异。这座城里有住处、有来往，也有让人忍不住多看一眼的东西。如果把它当作故乡，你想留下的可能是这种感觉：熟悉的街口，也能不断遇见新鲜事。",
+      "quote": "熟悉的街口，也可以长出一间奇怪的小店。",
+      "keywords": [
+        "奇想",
+        "街巷",
+        "新鲜"
+      ],
+      "nextStep": "给一个常用的小角落换件小摆设，或者画下你希望它多出的一个奇怪功能。",
+      "references": [
+        {
+          "title": "《绿野仙踪》",
+          "by": "莱曼·弗兰克·鲍姆"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Project Gutenberg：The Wonderful Wizard of Oz 原文，第11章",
+          "url": "https://www.gutenberg.org/files/55/old/wizoz10h.htm"
+        }
+      ],
+      "designTarget": {
+        "root": 70,
+        "bond": 70,
+        "pace": 40,
+        "wonder": 95,
+        "nature": 5,
+        "warmth": 85
+      },
+      "scene": "《绿野仙踪》中翡翠城的街道、商店与宫殿住处",
+      "designTargetNote": "本项目依据作品氛围原创设定的设计目标，不是作者、导演或画家的心理数据；展示参考轮廓由同一套题目的实际可选答卷计算。",
+      "referenceAnswers": {
+        "L01": [
+          "L01_o3",
+          "L01_o4"
+        ],
+        "L02": [
+          "L02_o1",
+          "L02_o2"
+        ],
+        "L03": "L03_o1",
+        "L04": "L04_o4",
+        "L05": "L05_o1",
+        "L06": "L06_o3",
+        "L07": "L07_o4",
+        "L08": "L08_o3",
+        "L09": "L09_o3",
+        "L10": "L10_o4",
+        "L11": "L11_o1",
+        "L12": "L12_o4",
+        "L13": "L13_o3",
+        "L14": "L14_o4",
+        "L15": [
+          "L15_o1",
+          "L15_o4"
+        ],
+        "L16": "L16_o4",
+        "L17": [
+          "L17_o1",
+          "L17_o2"
+        ],
+        "L18": "L18_o4",
+        "L19": "L19_o1",
+        "L20": "L20_o4",
+        "L21": "L21_o3",
+        "L22": "L22_o4",
+        "L23": "L23_o1",
+        "L24": "L24_o4"
+      }
+    },
+    {
+      "id": "march_parlor",
+      "name": "马奇家客厅",
+      "style": "相伴 · 家常 · 互相照应",
+      "title": "回来时，桌边总有一个位置。",
+      "summary": "客厅不算宽敞，书、针线和排练过的小戏挤在同一段傍晚里。有人拌嘴，有人递来一杯热茶，讲到自己的打算时总有人愿意听。这里让人想留下的，是一张能围坐的桌子：大家各有各的生活，回来时仍有话可说，也记得给彼此留位置。",
+      "quote": "先把饭吃了，再慢慢讲今天发生的事。",
+      "keywords": [
+        "相伴",
+        "家常",
+        "照应"
+      ],
+      "nextStep": "和亲近的人好好吃一顿饭，把最近发生的一件小事讲给对方听。",
+      "references": [
+        {
+          "title": "《小妇人》",
+          "by": "路易莎·梅·奥尔科特"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Project Gutenberg：Little Women 原文，第1章",
+          "url": "https://www.gutenberg.org/cache/epub/514/pg514-images.html"
+        }
+      ],
+      "designTarget": {
+        "root": 95,
+        "bond": 100,
+        "pace": 60,
+        "wonder": 25,
+        "nature": 20,
+        "warmth": 95
+      },
+      "scene": "《小妇人》中马奇家围着炉火、做针线与排练小戏的客厅",
+      "designTargetNote": "本项目依据作品氛围原创设定的设计目标，不是作者、导演或画家的心理数据；展示参考轮廓由同一套题目的实际可选答卷计算。",
+      "referenceAnswers": {
+        "L01": "L01_o4",
+        "L02": "L02_o4",
+        "L03": "L03_o3",
+        "L04": "L04_o1",
+        "L05": [
+          "L05_o1",
+          "L05_o2"
+        ],
+        "L06": "L06_o4",
+        "L07": "L07_o4",
+        "L08": "L08_o4",
+        "L09": "L09_o3",
+        "L10": "L10_o1",
+        "L11": "L11_o1",
+        "L12": "L12_o4",
+        "L13": "L13_o4",
+        "L14": "L14_o4",
+        "L15": [
+          "L15_o2",
+          "L15_o4"
+        ],
+        "L16": [
+          "L16_o2",
+          "L16_o4"
+        ],
+        "L17": [
+          "L17_o2",
+          "L17_o3"
+        ],
+        "L18": "L18_o4",
+        "L19": "L19_o3",
+        "L20": "L20_o4",
+        "L21": "L21_o3",
+        "L22": "L22_o2",
+        "L23": "L23_o1",
+        "L24": "L24_o4"
+      }
+    },
+    {
+      "id": "bath_streets",
+      "name": "巴斯街巷",
+      "style": "来往 · 城市 · 重新开口",
+      "title": "在城市的来往里，遇见新的下文。",
+      "summary": "一段路上可能碰见几位熟人，午后的拜访接着晚间的音乐会，消息也在人与人之间传得很快。街巷有热闹，也有客套和没说出口的话。这处文学故乡留给你的是参与生活的兴致：愿意赴约、接话、认识新面孔，也在来往里认清真正想靠近的人。",
+      "quote": "今天去见一见，故事也许就有了下文。",
+      "keywords": [
+        "来往",
+        "赴约",
+        "城市"
+      ],
+      "nextStep": "约一位聊得来的朋友见面，听听对方最近有哪件事想讲。",
+      "references": [
+        {
+          "title": "《劝导》",
+          "by": "简·奥斯汀"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Project Gutenberg：Persuasion 原文，第15—23章",
+          "url": "https://www.gutenberg.org/files/105/105-h/105-h.htm"
+        }
+      ],
+      "designTarget": {
+        "root": 40,
+        "bond": 90,
+        "pace": 20,
+        "wonder": 10,
+        "nature": 10,
+        "warmth": 75
+      },
+      "scene": "《劝导》中巴斯的街道、拜访、音乐会与重逢",
+      "designTargetNote": "本项目依据作品氛围原创设定的设计目标，不是作者、导演或画家的心理数据；展示参考轮廓由同一套题目的实际可选答卷计算。",
+      "referenceAnswers": {
+        "L01": [
+          "L01_o2",
+          "L01_o3"
+        ],
+        "L02": "L02_o4",
+        "L03": "L03_o1",
+        "L04": "L04_o1",
+        "L05": "L05_o1",
+        "L06": "L06_o4",
+        "L07": "L07_o1",
+        "L08": "L08_o4",
+        "L09": "L09_o2",
+        "L10": "L10_o1",
+        "L11": "L11_o1",
+        "L12": "L12_o4",
+        "L13": "L13_o3",
+        "L14": [
+          "L14_o3",
+          "L14_o4"
+        ],
+        "L15": "L15_o1",
+        "L16": [
+          "L16_o1",
+          "L16_o2"
+        ],
+        "L17": "L17_o2",
+        "L18": [
+          "L18_o1",
+          "L18_o2"
+        ],
+        "L19": "L19_o1",
+        "L20": "L20_o4",
+        "L21": "L21_o3",
+        "L22": "L22_o2",
+        "L23": "L23_o1",
+        "L24": "L24_o4"
+      }
+    },
+    {
+      "id": "dublin_streets",
+      "name": "都柏林街巷",
+      "style": "观察 · 现实 · 安静留白",
+      "title": "把平常的一天，看得再清楚一点。",
+      "summary": "旧街、窗灯和每天经过的店面，把城市铺成一层熟悉的底色。路上的人各有心事，一句闲话、一次停顿，也会让平常的日子忽然显出另一面。在这一页里，你可以安静地观察，不急着给每件事安排意义，先把看见的生活如实留下来。",
+      "quote": "今天没有大事，我还是记住了那个停顿。",
+      "keywords": [
+        "观察",
+        "日常",
+        "留白"
+      ],
+      "nextStep": "走一段常走的路，只记下三件今天亲眼看到的小事，不急着做总结。",
+      "references": [
+        {
+          "title": "《都柏林人》",
+          "by": "詹姆斯·乔伊斯"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Project Gutenberg：Dubliners 原文",
+          "url": "https://www.gutenberg.org/files/2814/2814-h/2814-h.htm"
+        }
+      ],
+      "designTarget": {
+        "root": 65,
+        "bond": 30,
+        "pace": 80,
+        "wonder": 10,
+        "nature": 5,
+        "warmth": 20
+      },
+      "scene": "《都柏林人》中北里士满街等城市街巷与日常片段",
+      "designTargetNote": "本项目依据作品氛围原创设定的设计目标，不是作者、导演或画家的心理数据；展示参考轮廓由同一套题目的实际可选答卷计算。",
+      "referenceAnswers": {
+        "L01": "L01_o3",
+        "L02": "L02_o2",
+        "L03": [
+          "L03_o3",
+          "L03_o4"
+        ],
+        "L04": [
+          "L04_o1",
+          "L04_o2"
+        ],
+        "L05": [
+          "L05_o1",
+          "L05_o2"
+        ],
+        "L06": "L06_o1",
+        "L07": "L07_o4",
+        "L08": "L08_o1",
+        "L09": "L09_o4",
+        "L10": "L10_o1",
+        "L11": "L11_o1",
+        "L12": "L12_o1",
+        "L13": "L13_o3",
+        "L14": "L14_o1",
+        "L15": "L15_o4",
+        "L16": "L16_o1",
+        "L17": "L17_o1",
+        "L18": [
+          "L18_o1",
+          "L18_o3"
+        ],
+        "L19": "L19_o1",
+        "L20": "L20_o4",
+        "L21": "L21_o3",
+        "L22": "L22_o2",
+        "L23": "L23_o1",
+        "L24": "L24_o3"
+      }
+    },
+    {
+      "id": "nautilus",
+      "name": "鹦鹉螺号",
+      "style": "独处 · 远航 · 海底奇想",
+      "title": "带着自己的安静，去看更远的地方。",
+      "summary": "舷窗外是陌生的海底，舱内却有书架、灯和一处可以独自坐着的角落。航线一直在变，安静也跟着船一起走。这个文学住处可以装下强烈的好奇：今天看清一种没见过的生物，明天再去更远的水域，把发现留在自己的笔记里。",
+      "quote": "窗外换了一片海，我还想再看仔细一点。",
+      "keywords": [
+        "独处",
+        "探索",
+        "远航"
+      ],
+      "nextStep": "挑一个一直好奇的小问题，花二十分钟查一查，再用自己的话记下发现。",
+      "references": [
+        {
+          "title": "《海底两万里》",
+          "by": "儒勒·凡尔纳"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Project Gutenberg：Twenty Thousand Leagues under the Sea 原文",
+          "url": "https://www.gutenberg.org/files/164/164-h/164-h"
+        }
+      ],
+      "designTarget": {
+        "root": 15,
+        "bond": 10,
+        "pace": 30,
+        "wonder": 90,
+        "nature": 100,
+        "warmth": 15
+      },
+      "scene": "《海底两万里》中航行于海底的鹦鹉螺号、图书室与观景舷窗",
+      "designTargetNote": "本项目依据作品氛围原创设定的设计目标，不是作者、导演或画家的心理数据；展示参考轮廓由同一套题目的实际可选答卷计算。",
+      "referenceAnswers": {
+        "L01": "L01_o1",
+        "L02": "L02_o1",
+        "L03": [
+          "L03_o1",
+          "L03_o2"
+        ],
+        "L04": "L04_o4",
+        "L05": "L05_o4",
+        "L06": "L06_o1",
+        "L07": "L07_o2",
+        "L08": "L08_o1",
+        "L09": "L09_o1",
+        "L10": "L10_o4",
+        "L11": "L11_o4",
+        "L12": "L12_o1",
+        "L13": "L13_o2",
+        "L14": "L14_o1",
+        "L15": "L15_o3",
+        "L16": "L16_o4",
+        "L17": "L17_o4",
+        "L18": "L18_o1",
+        "L19": "L19_o1",
+        "L20": "L20_o2",
+        "L21": "L21_o1",
+        "L22": "L22_o2",
+        "L23": "L23_o4",
+        "L24": "L24_o2"
+      }
+    },
+    {
+      "id": "fogg_journey",
+      "name": "福格的旅途",
+      "style": "启程 · 利落 · 轻装前行",
+      "title": "带上一点行李，就往下一站去。",
+      "summary": "行李不多，下一班车和下一段航程已经排在前面。窗外的城市接连换过，旅途中要紧的是看清时间、找到路、处理临时冒出的变化。如果把故乡放进这趟旅途，你会更在意手里的事能继续往前，给自己留一点空间，走到哪里再认识哪里。",
+      "quote": "先把下一站弄明白，新的日子就能动起来。",
+      "keywords": [
+        "启程",
+        "利落",
+        "流动"
+      ],
+      "nextStep": "选一件一直想开始的小事，只安排它的第一步，然后今天就动手做。",
+      "references": [
+        {
+          "title": "《八十天环游地球》",
+          "by": "儒勒·凡尔纳"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Project Gutenberg：Around the World in Eighty Days 原文",
+          "url": "https://www.gutenberg.org/files/103/103-h/103-h.htm"
+        }
+      ],
+      "designTarget": {
+        "root": 5,
+        "bond": 20,
+        "pace": 0,
+        "wonder": 20,
+        "nature": 40,
+        "warmth": 55
+      },
+      "scene": "《八十天环游地球》中福格换乘列车与汽船、追赶时间的旅途",
+      "designTargetNote": "本项目依据作品氛围原创设定的设计目标，不是作者、导演或画家的心理数据；展示参考轮廓由同一套题目的实际可选答卷计算。",
+      "referenceAnswers": {
+        "L01": "L01_o1",
+        "L02": "L02_o1",
+        "L03": "L03_o1",
+        "L04": "L04_o1",
+        "L05": [
+          "L05_o1",
+          "L05_o3"
+        ],
+        "L06": "L06_o2",
+        "L07": "L07_o1",
+        "L08": "L08_o1",
+        "L09": "L09_o1",
+        "L10": "L10_o1",
+        "L11": "L11_o2",
+        "L12": "L12_o4",
+        "L13": "L13_o1",
+        "L14": "L14_o1",
+        "L15": "L15_o1",
+        "L16": "L16_o2",
+        "L17": [
+          "L17_o3",
+          "L17_o4"
+        ],
+        "L18": [
+          "L18_o2",
+          "L18_o3"
+        ],
+        "L19": "L19_o1",
+        "L20": "L20_o4",
+        "L21": "L21_o1",
+        "L22": "L22_o2",
+        "L23": "L23_o1",
+        "L24": "L24_o4"
+      }
+    },
+    {
+      "id": "baghdad_bazaar",
+      "name": "巴格达集市",
+      "style": "热闹 · 奇遇 · 听人说故事",
+      "title": "街上有人，故事就有新的开头。",
+      "summary": "集市的店铺一间接一间，街上有赶路的人，也有停下来讲见闻的人。一顿饭、一句搭话，常常就把故事带向意想不到的地方。这里的吸引力是热闹里随时发生的变化：你愿意走进人群，把新消息听完，再看看下一条街还有什么。",
+      "quote": "拐过这条街，或许又能听见一个新故事。",
+      "keywords": [
+        "热闹",
+        "奇遇",
+        "来往"
+      ],
+      "nextStep": "下次路过一家平时没留意的小店，停一分钟看看它的招牌和橱窗。",
+      "references": [
+        {
+          "title": "《一千零一夜》",
+          "by": "民间故事集"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Project Gutenberg：Supplemental Nights, Volume 6，巴格达巫师与年轻厨师的故事",
+          "url": "https://www.gutenberg.org/cache/epub/3450/pg3450.html.utf8"
+        }
+      ],
+      "designTarget": {
+        "root": 25,
+        "bond": 85,
+        "pace": 15,
+        "wonder": 90,
+        "nature": 5,
+        "warmth": 95
+      },
+      "scene": "《一千零一夜》相关故事中的巴格达集市、食铺与陌生人相遇",
+      "designTargetNote": "本项目依据作品氛围原创设定的设计目标，不是作者、导演或画家的心理数据；展示参考轮廓由同一套题目的实际可选答卷计算。",
+      "referenceAnswers": {
+        "L01": [
+          "L01_o1",
+          "L01_o3"
+        ],
+        "L02": [
+          "L02_o1",
+          "L02_o4"
+        ],
+        "L03": "L03_o1",
+        "L04": "L04_o4",
+        "L05": "L05_o1",
+        "L06": "L06_o4",
+        "L07": "L07_o2",
+        "L08": "L08_o4",
+        "L09": "L09_o1",
+        "L10": "L10_o4",
+        "L11": "L11_o1",
+        "L12": "L12_o4",
+        "L13": "L13_o1",
+        "L14": [
+          "L14_o3",
+          "L14_o4"
+        ],
+        "L15": "L15_o2",
+        "L16": "L16_o4",
+        "L17": "L17_o2",
+        "L18": "L18_o4",
+        "L19": "L19_o1",
+        "L20": "L20_o4",
+        "L21": "L21_o2",
+        "L22": "L22_o3",
+        "L23": "L23_o1",
+        "L24": "L24_o4"
+      }
+    }
+  ],
+  "ui": {
+    "questionUnit": "片段",
+    "questionKicker": "日常生活 · 翻到这一页",
+    "singleHeading": "你会想留下来的文学故乡",
+    "jointHeading": "两处地方，都有你的影子",
+    "storyHeading": "如果日子住进一页书里",
+    "evidenceHeading": "这些回答，写进了这一页",
+    "nextHeading": "留给生活的一点空白",
+    "resultNoun": "文学故乡档案",
+    "eyebrow": "文学的另一种读法"
+  },
+  "measurementNote": "题目、配分和参考轮廓为原创娱乐设计，尚未经过心理测量验证。数字表示本次作答中的偏好，不是能力高低、概率或人口百分位。 文学场景是作品氛围的比喻，不是原作人物的命运，也不是现实定居建议。 多选题把所选选项的分数取平均后计入维度，每道题的总权重不因多选增加。"
+}

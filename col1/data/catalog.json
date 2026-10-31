@@ -1,0 +1,26 @@
+{
+  "edition": 2,
+  "collections": [
+    "data/collections/col1.json"
+  ],
+  "quizzes": [
+    "data/quizzes/director.json",
+    "data/quizzes/literary.json",
+    "data/quizzes/painting.json"
+  ],
+  "bundledArt": {
+    "archive": "assets/edition-one.html",
+    "quizId": "painting",
+    "ids": [
+      "wheat_cypresses",
+      "jalais_hill",
+      "seashore",
+      "dance_class",
+      "great_wave",
+      "circus_sideshow",
+      "apples_primroses",
+      "lion_repast"
+    ]
+  },
+  "build": "976f31c7e030e109"
+}
